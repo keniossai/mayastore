@@ -18,7 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', 'App\Http\Controllers\Admin\AdminController@dashboard');
+Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){
+    Route::get('dashboard', 'AdminController@dashboard');
+    Route::match(['get','post'],'login', 'AdminController@login');
+    Route::match(['register','post'], 'AdminController@register');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

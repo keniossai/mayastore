@@ -8,16 +8,17 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta name="description" content="Maya store">
+	<meta property="og:title" content="Admin Dashboard">
+	<meta property="og:description" content="E-commerce admin dashboard">
 	<meta property="og:image" content="social-image.png">
 	<meta name="format-detection" content="telephone=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
-	<title>E-commerce Dashboard</title>
+	<title>{{ config('app.name', 'Dashboard') }}</title>
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.ico') }}">
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
 	<link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
 	<link href="{{ asset('admin/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">
@@ -114,7 +115,7 @@
 	<script src="{{ asset('admin/vendor/apexchart/apexchart.js')}}"></script>
 
 	<!-- Dashboard 1 -->
-	<script src="{{ asset('js/dashboard/dashboard-1.js') }}"></script>
+	<script src="{{ asset('/dashboard-1.js') }}"></script>
 	<script src="{{ asset('admin/vendor/draggable/draggable.js')}}"></script>
 	<!-- tagify -->
 	<script src="{{ asset('admin/vendor/tagify/dist/tagify.js')}}"></script>

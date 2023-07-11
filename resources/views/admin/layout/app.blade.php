@@ -94,7 +94,7 @@
 
         <div class="footer">
             <div class="copyright">
-               <p>Copyright © Developed by <a href="https://dexignzone.com/" target="_blank">DexignZone</a> 2023</p>
+               <p>Copyright © Developed by <a href="" target="_blank">Maya E-Commerce store</a> 2023</p>
             </div>
         </div>
 
@@ -144,5 +144,4 @@
 
 </body>
 
-<!-- Mirrored from w3crm.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 21:21:21 GMT -->
 </html>

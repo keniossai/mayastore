@@ -16,7 +16,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
-	<title>{{ config('app.name', 'Dashboard') }}</title>
+	<title>@yield('title', config('app.name'))</title>
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 

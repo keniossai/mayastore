@@ -122,8 +122,7 @@
                                         <img src="images/tab/1.jpg" alt="">
                                     </div>
                                     <div class="header-info">
-                                        <h6>Thomas Fleming</h6>
-                                        <p>info@gmail.com</p>
+                                        <h6>{{ Auth::guard('admin')->user()->name }}</h6>
                                     </div>
 
                                 </div>
@@ -134,8 +133,8 @@
                                         <div class="products">
                                             <img src="images/tab/1.jpg" class="avatar avatar-md" alt="">
                                             <div>
-                                                <h6>Thomas Fleming</h6>
-                                                <span>Web Designer</span>
+                                                <h6>{{ Auth::guard('admin')->user()->name }}</h6>
+                                                <span>{{ Auth::guard('admin')->user()->email }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -147,27 +146,6 @@
                                             </svg>
 
                                             <span class="ms-2">Profile </span>
-                                        </a>
-                                        <a href="app-profile.html" class="dropdown-item ai-icon ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-
-                                            <span class="ms-2">My Project</span><span class="badge badge-sm badge-secondary light rounded-circle text-white ms-2">4</span>
-                                        </a>
-                                        <a href="javascript:void(0);" class="dropdown-item ai-icon ">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.9026 8.85114L13.4593 12.4642C12.6198 13.1302 11.4387 13.1302 10.5992 12.4642L6.11844 8.85114" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9089 21C19.9502 21.0084 22 18.5095 22 15.4384V8.57001C22 5.49883 19.9502 3 16.9089 3H7.09114C4.04979 3 2 5.49883 2 8.57001V15.4384C2 18.5095 4.04979 21.0084 7.09114 21H16.9089Z" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-
-                                            <span class="ms-2">Message </span>
-                                        </a>
-                                        <a href="email-inbox.html" class="dropdown-item ai-icon ">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17.8476C17.6392 17.8476 20.2481 17.1242 20.5 14.2205C20.5 11.3188 18.6812 11.5054 18.6812 7.94511C18.6812 5.16414 16.0452 2 12 2C7.95477 2 5.31885 5.16414 5.31885 7.94511C5.31885 11.5054 3.5 11.3188 3.5 14.2205C3.75295 17.1352 6.36177 17.8476 12 17.8476Z" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M14.3888 20.8572C13.0247 22.372 10.8967 22.3899 9.51947 20.8572" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-
-                                            <span class="ms-2">Notification </span>
                                         </a>
                                     </div>
                                     <div class="card-footer px-0 py-2">

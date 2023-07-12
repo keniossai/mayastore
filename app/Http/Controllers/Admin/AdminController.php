@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -34,7 +36,7 @@ class AdminController extends Controller
 
                 // toastr()->error('Email or Password is incorrect!');
                 // Session()->put('error','Invalid Email or Password is incorrect!');
-                return redirect()->back()->with('error','Invalid Email or Password is incorrect!');;
+                return redirect()->back()->with('error','Invalid Email or Password is incorrect!');
 
             }
         }
@@ -43,7 +45,18 @@ class AdminController extends Controller
 
     public function updateAdminPassword()
     {
-        return view('admin.settings.reset-password');
+        $adminDetails = Admin::where('email', Auth::guard('admin')->user()->email)->first()->toArray();
+        return view('admin.settings.reset-password', compact('adminDetails'));
+    }
+
+    public function checkAdminPassword(Request $request) {
+        $data = $request->all();
+
+        if(Hash::check($data['current_password'],Auth::guard('admin')->user()->password)){
+            return "true";
+        }else{
+            return "false";
+        };
     }
 
     public function register()

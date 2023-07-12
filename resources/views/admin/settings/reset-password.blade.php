@@ -54,20 +54,20 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Full Name</label>
-                                                            <input type="email" placeholder="Full name" class="form-control">
+                                                            <input type="email" placeholder="Full name" value="{{ $adminDetails['name'] }}" class="form-control" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Phone Number</label>
-                                                            <input type="phone" placeholder="Phone number" class="form-control">
+                                                            <input type="phone" placeholder="Phone number" value="{{ $adminDetails['mobile'] }}" class="form-control">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Email</label>
-                                                            <input type="email" placeholder="Email" class="form-control">
+                                                            <input type="email" placeholder="Email" value="{{ $adminDetails['email'] }}" class="form-control" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Type</label>
                                                             <select class="form-control" >
-                                                                <option selected="">Select Type</option>
+                                                                <option selected="">{{ $adminDetails['type'] }}</option>
                                                                 <option>Option 1</option>
                                                                 <option>Option 2</option>
                                                                 <option>Option 3</option>
@@ -85,26 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Modal -->
-                            <div class="modal fade" id="replyModal">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Post Reply</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <textarea class="form-control h-50" rows="4">Message</textarea>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Reply</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -124,10 +105,14 @@
                                             <div class="settings-form">
                                                 <form>
                                                     <div class="mb-3 col-md-12">
-                                                        <input type="email" placeholder="Enter new password" class="form-control">
+                                                        <input type="password" name="current_password" id="current_password"  class="form-control" required>
+                                                        <span id="check_password"></span>
                                                     </div>
                                                     <div class="mb-3 col-md-12">
-                                                        <input type="phone" placeholder="Confirm your new password" class="form-control">
+                                                        <input type="password" name="new_password" id="new_password"  placeholder="Enter new password" class="form-control" required>
+                                                    </div>
+                                                    <div class="mb-3 col-md-12">
+                                                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" class="form-control">
                                                     </div>
                                                     <button class="btn btn-primary" type="submit">Save Password</button>
                                                 </form>

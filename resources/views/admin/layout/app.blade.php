@@ -142,7 +142,31 @@
     <script src="{{ asset('admin/js/styleSwitcher.js')}}"></script>
 
 
+<script>
+    $(document).ready(function(){
+    $("#current_password").keyup(function(){
+        var current_password = $("#current_password").val();
 
+        $.ajax({
+            headers:{
+                'X-CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'post',
+            url: '/admin/check-admin-password',
+            data:{current_password:current_password},
+            success:function(resp){
+                if(resp=="false"){
+                    $("#check_password").html("<font color='red'>Current Password is incorrect</font>");
+                }else if(resp="true"){
+                    $("#check_password").html("<font color='green'>Current Password is Correct!</font>");
+                }
+            },error:function(){
+                alert('Error');
+            }
+        })
+    })
+})
+</script>
 </body>
 
 </html>

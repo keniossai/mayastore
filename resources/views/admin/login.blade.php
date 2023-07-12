@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
-
-<!-- Mirrored from w3crm.dexignzone.com/xhtml/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 21:25:07 GMT -->
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +8,14 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:image" content="social-image.png">
+	<meta name="description" content="Admin login">
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
 	<title>Admin: Log in</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
 </head>
@@ -35,17 +30,18 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
 									<div class="text-center mb-3">
-										<a href="index.html"><img src="{{ asset('logo.png') }}" style="width: 40%;" alt=""></a>
+										<a href=""><img src="{{ asset('logo.png') }}" style="width: 40%;" alt=""></a>
 									</div>
                                     <h4 class="text-center mb-4">Login to your account</h4>
-                                    <form action="">
+                                    <form action="{{ url('admin/login') }}" method="POST">
+                                        @csrf
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="text" class="form-control" placeholder="enter email">
+                                            <input type="text" name="email" id="email" class="form-control" placeholder="enter email" required>
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" placeholder="********">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="********" required>
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary btn-block">Login</button>
@@ -70,7 +66,46 @@
 <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
 <script src="{{ asset('admin/js/custom.js') }}"></script>
 <script src="{{ asset('admin/js/deznav-init.js') }}"></script>
+{{-- <script src="{{ asset('admin/js/toastr.js') }}"></script> --}}
+{{-- <script>
+
+    // success message popup notification
+
+    @if(Session::has('success'))
+
+        toastr.success("{{ Session::get('success') }}");
+
+    @endif
+
+
+    // info message popup notification
+
+    @if(Session::has('info'))
+
+        toastr.info("{{ Session::get('info') }}");
+
+    @endif
+
+
+    // warning message popup notification
+
+    @if(Session::has('warning'))
+
+        toastr.warning("{{ Session::get('warning') }}");
+
+    @endif
+
+
+    // error message popup notification
+
+    @if(Session::has('error'))
+
+        toastr.error("{{ Session::get('error') }}");
+
+    @endif
+
+</script> --}}
+
 </body>
 
-<!-- Mirrored from w3crm.dexignzone.com/xhtml/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 21:25:07 GMT -->
 </html>

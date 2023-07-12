@@ -30418,8 +30418,8 @@ table.dataTable thead .sorting_asc {
   min-width: 0; }
 
 .authincation {
-  /* background: var(--rgba-primary-1); */
-  background-image: url('../images/background/login-bg.jpg');
+  background: var(--rgba-primary-1);
+  /* background-image: url('../images/background/login-bg.jpg'); */
   /* background-size: cover; */
   display: flex;
   min-height: 100vh; }

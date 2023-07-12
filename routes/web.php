@@ -20,11 +20,14 @@ Route::get('/', function () {
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function(){
     Route::match(['get','post'],'login', 'AdminController@login');
-    Route::match(['get','post'],'register', 'AdminController@register');
+    // Route::match(['get','post'],'register', 'AdminController@register');
 
     // Admin dashboard route
     Route::group(['middleware'=>['admin']], function() {
         Route::get('dashboard', 'AdminController@dashboard');
+
+        // Admin Logout
+        Route::get('logout', 'AdminController@logout');
     });
 });
 

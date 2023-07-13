@@ -50,23 +50,24 @@
                                     <div id="profile-settings" class="tab-pane fade active show" role="tabpanel">
                                         <div class="pt-3">
                                             <div class="settings-form">
-                                                <form>
+                                                <form action="{{ url('admin/update-details') }}" method="post">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Full Name</label>
-                                                            <input type="email" placeholder="Full name" value="{{ $adminDetails['name'] }}" class="form-control" readonly>
+                                                            <input type="text" name="name"  value="{{ $adminDetails['name'] }}" class="form-control" >
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Phone Number</label>
-                                                            <input type="phone" placeholder="Phone number" value="{{ $adminDetails['mobile'] }}" class="form-control">
+                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" value="{{ $adminDetails['mobile'] }}" class="form-control" maxlength="11" minlength="11">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Email</label>
-                                                            <input type="email" placeholder="Email" value="{{ $adminDetails['email'] }}" class="form-control" readonly>
+                                                            <input type="email"  name="email" value="{{ $adminDetails['email'] }}" class="form-control" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Type</label>
-                                                            <select class="form-control" >
+                                                            <select class="form-control" name="type">
                                                                 <option selected="">{{ $adminDetails['type'] }}</option>
                                                                 <option>Option 1</option>
                                                                 <option>Option 2</option>
@@ -75,7 +76,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>
-                                                            <input type="file" class="form-control">
+                                                            <input type="file" name="image" class="form-control">
                                                         </div>
                                                     </div>
                                                     <button class="btn btn-primary" type="submit">Sign in</button>
@@ -103,7 +104,7 @@
                                 <div class="tab-content">
                                         <div class="pt-3">
                                             <div class="settings-form">
-                                                <form action="{{ url('admin/profile-update') }}" method="POST">
+                                                <form action="{{ url('admin/profile-update') }}" method="post">
                                                     @csrf
                                                     <div class="mb-3 col-md-12">
                                                         <input type="password" name="current_password" id="current_password"  class="form-control" required>
@@ -115,7 +116,7 @@
                                                     <div class="mb-3 col-md-12">
                                                         <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" class="form-control">
                                                     </div>
-                                                    <button class="btn btn-primary" type="submit">Save Password</button>
+                                                    <button class="btn btn-primary" type="submit">Save Password <x-spinner /> </button>
                                                 </form>
                                             </div>
                                         </div>

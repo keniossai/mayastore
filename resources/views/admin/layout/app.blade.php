@@ -142,6 +142,8 @@
 	<script src="{{ asset('admin/js/demo.js')}}"></script>
     <script src="{{ asset('admin/js/styleSwitcher.js')}}"></script>
     <script src="{{ asset('admin/js/toastr.js') }}"></script>
+    <script src="{{ asset('js/request.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
 <script>
 
     // success message popup notification

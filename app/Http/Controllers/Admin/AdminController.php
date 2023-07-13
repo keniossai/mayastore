@@ -52,12 +52,36 @@ class AdminController extends Controller
             // if current password entered by admin is correct
             if(Hash::check($data['current_password'], Auth::guard('admin')->user()->password)){
 
+                if($data['confirm_password']==$data['new_password']){
+                    Admin::where('id', Auth::guard('admin')->user()->id)->update(['password'=>
+                    bcrypt($data['new_password'])]);
+                    return redirect()->back()->with('success','Password updated successfully');
+                }else{
+                    return redirect()->back()->with('error','Your new password does not match!');
+                }
             }else{
                 return redirect()->back()->with('error','Your current password is incorrect!');
             }
         }
         $adminDetails = Admin::where('email', Auth::guard('admin')->user()->email)->first()->toArray();
         return view('admin.settings.reset-password', compact('adminDetails'));
+    }
+
+    public function updateProfileDetails(Request $request)
+    {
+        if($request->isMethod('post')){
+            $data = $request->all();
+            // dd($request->all());
+
+            $rules = [
+                'name'     => 'required|regex:/^[\pL\s\-]+$/u',
+                'phone' => 'required|numeric',
+            ];
+
+            Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile']]);
+            return redirect()->back()->with('success','Admin details updated successfully');
+        }
+        return view('admin.settings.reset-password');
     }
 
     // Check if admin password is correct

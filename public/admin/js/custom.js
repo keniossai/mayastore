@@ -466,7 +466,7 @@ var W3Crm = function(){
 	document.addEventListener("DOMContentLoaded", function() {
 		loader = document.getElementById('loader');
 		loadNow(1);
-	}); */
+	});
 
 	/* Masonry Box ============ */
 	var masonryBox = function(){

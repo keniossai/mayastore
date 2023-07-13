@@ -1,6 +1,7 @@
 @extends('admin.layout.app')
 
 @section('content')
+
 <div class="content-body">
     <!-- row -->
     <div class="page-titles">

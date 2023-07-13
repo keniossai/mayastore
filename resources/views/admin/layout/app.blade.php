@@ -34,6 +34,7 @@
 
 	<!-- Style css -->
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/toastr.css') }}" rel="stylesheet">
 
 </head>
 <body data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="black" data-headerbg="color_1">
@@ -140,6 +141,47 @@
 	<script src="{{ asset('admin/js/deznav-init.js')}}"></script>
 	<script src="{{ asset('admin/js/demo.js')}}"></script>
     <script src="{{ asset('admin/js/styleSwitcher.js')}}"></script>
+    <script src="{{ asset('admin/js/toastr.js') }}"></script>
+<script>
+
+    // success message popup notification
+
+    @if(Session::has('success'))
+
+        toastr.success("{{ Session::get('success') }}");
+
+    @endif
+
+
+    // info message popup notification
+
+    @if(Session::has('info'))
+
+        toastr.info("{{ Session::get('info') }}");
+
+    @endif
+
+
+    // warning message popup notification
+
+    @if(Session::has('warning'))
+
+        toastr.warning("{{ Session::get('warning') }}");
+
+    @endif
+
+
+    // error message popup notification
+
+    @if(Session::has('error'))
+
+        toastr.error("{{ Session::get('error') }}");
+
+    @endif
+
+
+
+</script>
 
 
 <script>

@@ -103,7 +103,8 @@
                                 <div class="tab-content">
                                         <div class="pt-3">
                                             <div class="settings-form">
-                                                <form>
+                                                <form action="{{ url('admin/profile-update') }}" method="POST">
+                                                    @csrf
                                                     <div class="mb-3 col-md-12">
                                                         <input type="password" name="current_password" id="current_password"  class="form-control" required>
                                                         <span id="check_password"></span>

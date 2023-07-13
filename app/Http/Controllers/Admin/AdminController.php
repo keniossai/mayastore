@@ -43,12 +43,22 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
-    public function updateAdminPassword()
+    // Update Admin Password
+    public function updateAdminPassword(Request $request)
     {
+        if($request->isMethod('post')){
+            $data = $request->all();
+            if(Hash::check($data['current_password'], Auth::guard('admin')->user()->password)){
+
+            }else{
+                return redirect()->back()->with('error','Your current password is incorrect!');
+            }
+        }
         $adminDetails = Admin::where('email', Auth::guard('admin')->user()->email)->first()->toArray();
         return view('admin.settings.reset-password', compact('adminDetails'));
     }
 
+    // Check if admin password is correct
     public function checkAdminPassword(Request $request) {
         $data = $request->all();
 
@@ -64,6 +74,7 @@ class AdminController extends Controller
         return view('admin.register');
     }
 
+    // Logout Route
     public function logout(){
         Auth::guard('admin')->logout();
 

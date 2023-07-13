@@ -48,6 +48,8 @@ class AdminController extends Controller
     {
         if($request->isMethod('post')){
             $data = $request->all();
+            // dd($request->all());
+            // if current password entered by admin is correct
             if(Hash::check($data['current_password'], Auth::guard('admin')->user()->password)){
 
             }else{

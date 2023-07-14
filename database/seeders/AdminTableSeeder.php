@@ -15,10 +15,10 @@ class AdminTableSeeder extends Seeder
     {
         $adminRecords = [
             ['id' => 1,
-            'name'=>'Super Admin',
+            'name'=>'Ken Ossai',
             'type'=>'superadmin',
             'mobile'=>'09039038898',
-            'email'=>'admin@admin.com',
+            'email'=>'ken@gmail.com',
             'password'=>'$2y$12$9vh/c6UDSxppbMqLPHKSzOOHezWRio2fAL2CtiB54SQT/evBTSSXO',
             'vendor_id'=>0,
             'image'=>'',

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
-
 class AdminController extends Controller
 {
     public function dashboard()
@@ -78,7 +78,34 @@ class AdminController extends Controller
                 'phone' => 'required|numeric',
             ];
 
-            $this->validate($request,$rules);
+            // $this->validate($request,$rules);
+
+            // Update admin image
+            if($request->hasFile('image')){
+                $image_temp = $request->file('image');
+                if($image_temp->isValid()){
+                    $extension = $image_temp->getClientOriginalExtension();
+
+                     $imageName = rand(1111,9999).'.'.$extension;
+                     $imagePath = 'admin/images/photos/'.$imageName;
+
+                     Image::make($image_temp)->save($imagePath);
+                }
+            }
+
+            // if($request->hasfile('image')){
+            //     $newFile = $request->file('image');
+            //     $file_path = $newFile->store('/admin/images/photos/');
+            //     Admin::create([
+            //         'image'=>$file_path
+            //     ]);
+            // }
+
+
+
+
+
+
 
             Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile']]);
             return redirect()->back()->with('success','Admin details updated successfully');

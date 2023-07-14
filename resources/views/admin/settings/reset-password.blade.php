@@ -27,7 +27,15 @@
                         </div>
                         <div class="profile-info">
                             <div class="profile-photo">
-                                <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+
+                                @if(!empty(Auth::guard('admin')->user()->image))
+                                <img src="{{ asset("admin/images/photos/".Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt="">
+                                {{-- <img src="{{ url('admin/images/photos/'.Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt=""> --}}
+                                @endif
+                            </div>
+                            <div class="dropdown ms-auto">
+                                <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="true">{{ $adminDetails['type'] }}</a>
+
                             </div>
                         </div>
                     </div>
@@ -58,7 +66,7 @@
                                     <div id="profile-settings" class="tab-pane fade active show" role="tabpanel">
                                         <div class="pt-3">
                                             <div class="settings-form">
-                                                <form action="{{ url('admin/update-details') }}" method="post">
+                                                <form action="{{ url('admin/update-details') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
@@ -84,7 +92,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>
-                                                            <input type="file" name="image" class="form-control">
+                                                            <input style="height: 40px;" type="file" name="image" id="image" class="form-control">
                                                         </div>
                                                     </div>
                                                     <button class="btn btn-primary" type="submit">Sign in</button>

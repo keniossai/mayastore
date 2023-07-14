@@ -78,6 +78,8 @@ class AdminController extends Controller
                 'phone' => 'required|numeric',
             ];
 
+            $this->validate($request,$rules);
+
             Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile']]);
             return redirect()->back()->with('success','Admin details updated successfully');
         }

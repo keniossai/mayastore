@@ -29,7 +29,6 @@
                             <div class="profile-photo">
                                 <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -46,6 +45,15 @@
                                         Basic Information
                                     </li>
                                 </ul>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="tab-content">
                                     <div id="profile-settings" class="tab-pane fade active show" role="tabpanel">
                                         <div class="pt-3">

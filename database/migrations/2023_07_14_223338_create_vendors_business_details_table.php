@@ -14,15 +14,17 @@ return new class extends Migration
         Schema::create('vendors_business_details', function (Blueprint $table) {
             $table->id();
             $table->integer('vendor_id');
+            $table->string('vendor_name');
             $table->string('company_reg__name');
             $table->string('shop_name');
             $table->string('business_entity');
             $table->string('identification');
             $table->string('address_one');
-            $table->string('address_two');
+            $table->string('address_two')->nullable();
             $table->string('city');
             $table->string('state');
             $table->string('country');
+            $table->string('status');
             $table->string('legal_rep');
             $table->string('email');
             $table->string('mobile');
@@ -32,7 +34,7 @@ return new class extends Migration
             $table->string('cac_proof_image');
             $table->string('vat_reg');
             $table->string('tax_id');
-            $table->string('tax_proof-image');
+            $table->string('tax_proof_image');
             $table->timestamps();
         });
     }

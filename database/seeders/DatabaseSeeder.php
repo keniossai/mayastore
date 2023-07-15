@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(AdminTableSeeder::class);
+        // $this->call(AdminTableSeeder::class);
+        // $this->call(VendorsTableSeeder::class);
+        // $this->call(VendorsBusinessDetailsTableSeeder::class);
+        $this->call(VendorsBankDetailsTableSeeder::class);
     }
 }

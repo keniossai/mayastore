@@ -23,235 +23,402 @@
                 <div class="card p-4 main-card">
                     <h1 class="heading p-1">Business Analytics</h1>
                     <div class="row">
-                        <div class="col-xl-3 col-sm-6 same-card ">
-                            <div class="card business-analytics">
-                                <div class="card-body depostit-card">
-                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                        <div>
-                                            <h6>Total Sales</h6>
-                                            <h3>20</h3>
-                                        </div>
-                                        <div class="icon-box bg-primary-light">
-                                            <img src="./icons/card/total-sale.png" alt="">
+                        @if(Auth::guard('admin')->user()->type=="superadmin")
+                            <div class="col-xl-3 col-sm-6 same-card ">
+                                <div class="card business-analytics">
+                                    <div class="card-body depostit-card">
+                                        <div class="depostit-card-media d-flex justify-content-between style-1">
+                                            <div>
+                                                <h6>Total Sales</h6>
+                                                <h3>20</h3>
+                                            </div>
+                                            <div class="icon-box bg-primary-light">
+                                                <img src="./icons/card/total-sale.png" alt="">
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-xl-3 col-sm-6 same-card ">
-                            <div class="card business-analytics">
-                                <div class="card-body depostit-card">
-                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                        <div>
-                                            <h6>Total Store</h6>
-                                            <h3>20</h3>
-                                        </div>
-                                        <div class="icon-box bg-primary-light">
-                                            <img src="./icons/card/stores.png" alt="">
+                            <div class="col-xl-3 col-sm-6 same-card ">
+                                <div class="card business-analytics">
+                                    <div class="card-body depostit-card">
+                                        <div class="depostit-card-media d-flex justify-content-between style-1">
+                                            <div>
+                                                <h6>Total Store</h6>
+                                                <h3>20</h3>
+                                            </div>
+                                            <div class="icon-box bg-primary-light">
+                                                <img src="./icons/card/stores.png" alt="">
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-xl-3 col-sm-6 same-card ">
-                            <div class="card business-analytics">
-                                <div class="card-body depostit-card">
-                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                        <div>
-                                            <h6>Total Products</h6>
-                                            <h3>20</h3>
-                                        </div>
-                                        <div class="icon-box bg-primary-light">
-                                            <img src="./icons/card/total-product.png" alt="">
+                            <div class="col-xl-3 col-sm-6 same-card ">
+                                <div class="card business-analytics">
+                                    <div class="card-body depostit-card">
+                                        <div class="depostit-card-media d-flex justify-content-between style-1">
+                                            <div>
+                                                <h6>Total Products</h6>
+                                                <h3>20</h3>
+                                            </div>
+                                            <div class="icon-box bg-primary-light">
+                                                <img src="./icons/card/total-product.png" alt="">
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-sm-6 same-card ">
-                            <div class="card business-analytics">
-                                <div class="card-body depostit-card">
-                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                        <div>
-                                            <h6>Total Customer</h6>
-                                            <h3>80</h3>
-                                        </div>
-                                        <div class="icon-box bg-primary-light">
-                                            <img src="./icons/card/total-customer.png" alt="">
+                            <div class="col-xl-3 col-sm-6 same-card ">
+                                <div class="card business-analytics">
+                                    <div class="card-body depostit-card">
+                                        <div class="depostit-card-media d-flex justify-content-between style-1">
+                                            <div>
+                                                <h6>Total Customer</h6>
+                                                <h3>80</h3>
+                                            </div>
+                                            <div class="icon-box bg-primary-light">
+                                                <img src="./icons/card/total-customer.png" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-9 wid-100">
-                                <div class="row">
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Pending</h4>
-                                                            <h3>50</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/pending.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Confirmed</h4>
-                                                            <h3>40</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/confirmed.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Packaging</h4>
-                                                            <h3>10</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/packaging.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Out for Delivery </h4>
-                                                            <h3>30</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/out-of-delivery.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Delivered </h4>
-                                                            <h3>0</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/delivered.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Canceled </h4>
-                                                            <h3>0</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/canceled.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Returned </h4>
-                                                            <h3>2</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/canceled.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 same-card">
-                                        <a href="" class="">
-                                            <div class="card" style="border: none;">
-                                                <div class="card-body small-card depostit-card">
-                                                    <div class="depostit-card-media d-flex justify-content-between style-1">
-                                                        <div>
-                                                            <h4>Failed to Delivery </h4>
-                                                            <h3>5</h3>
-                                                        </div>
-                                                        <div class="icon-box bg-primary-light">
-                                                            <img src="./icons/card/failed-to-deliver.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- <div class="col-xl-3 col-sm-6 same-card">
-                                        <div class="card">
-                                            <div class="card-body depostit-card">
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
                                                 <div class="depostit-card-media d-flex justify-content-between style-1">
                                                     <div>
-                                                        <h4>Confirmed</h4>
+                                                        <h4>Pending</h4>
+                                                        <h3>50</h3>
                                                     </div>
                                                     <div class="icon-box bg-primary-light">
-                                                        <h3>20</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="progress-box mt-0">
-                                                    <div class="d-flex justify-content-between">
-                                                        <p class="mb-0">Pending Order</p>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-primary" style="width:50%; height:5px; border-radius:4px;" role="progressbar"></div>
+                                                        <img src="./icons/card/pending.png" alt="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
-
+                                    </a>
                                 </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Confirmed</h4>
+                                                        <h3>40</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/confirmed.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Packaging</h4>
+                                                        <h3>10</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/packaging.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Out for Delivery </h4>
+                                                        <h3>30</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/out-of-delivery.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Delivered </h4>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/delivered.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Canceled </h4>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/canceled.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Returned </h4>
+                                                        <h3>2</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/canceled.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Failed to Delivery </h4>
+                                                        <h3>5</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/failed-to-deliver.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- <div class="col-xl-3 col-sm-6 same-card">
+                                    <div class="card">
+                                        <div class="card-body depostit-card">
+                                            <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                <div>
+                                                    <h4>Confirmed</h4>
+                                                </div>
+                                                <div class="icon-box bg-primary-light">
+                                                    <h3>20</h3>
+                                                </div>
+                                            </div>
+                                            <div class="progress-box mt-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-0">Pending Order</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary" style="width:50%; height:5px; border-radius:4px;" role="progressbar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
                             </div>
                         </div>
+                        @else
+                        <div class="col-xl-9 wid-100">
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Pending</h4>
+                                                        <h3>50</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/pending.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Confirmed</h4>
+                                                        <h3>40</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/confirmed.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Packaging</h4>
+                                                        <h3>10</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/packaging.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Out for Delivery </h4>
+                                                        <h3>30</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/out-of-delivery.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Delivered </h4>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/delivered.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Canceled </h4>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/canceled.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Returned </h4>
+                                                        <h3>2</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/canceled.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 same-card">
+                                    <a href="" class="">
+                                        <div class="card" style="border: none;">
+                                            <div class="card-body small-card depostit-card">
+                                                <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                    <div>
+                                                        <h4>Failed to Delivery </h4>
+                                                        <h3>5</h3>
+                                                    </div>
+                                                    <div class="icon-box bg-primary-light">
+                                                        <img src="./icons/card/failed-to-deliver.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- <div class="col-xl-3 col-sm-6 same-card">
+                                    <div class="card">
+                                        <div class="card-body depostit-card">
+                                            <div class="depostit-card-media d-flex justify-content-between style-1">
+                                                <div>
+                                                    <h4>Confirmed</h4>
+                                                </div>
+                                                <div class="icon-box bg-primary-light">
+                                                    <h3>20</h3>
+                                                </div>
+                                            </div>
+                                            <div class="progress-box mt-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-0">Pending Order</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary" style="width:50%; height:5px; border-radius:4px;" role="progressbar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+                        @endif
+
                     </div>
                 </div>
             </div>

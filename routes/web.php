@@ -40,6 +40,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         // Admin Logout
         Route::get('logout', 'AdminController@logout');
+
+        Route::get('my_shop', 'AdminController@my_shop');
     });
 });
 

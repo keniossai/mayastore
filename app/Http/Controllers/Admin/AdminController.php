@@ -135,4 +135,9 @@ class AdminController extends Controller
 
         return redirect('admin/login');
     }
+
+    public function my_shop()
+    {
+        return view('template.shop');
+    }
 }

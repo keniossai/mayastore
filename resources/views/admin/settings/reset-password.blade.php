@@ -30,12 +30,7 @@
 
                                 @if(!empty(Auth::guard('admin')->user()->image))
                                 <img src="{{ asset("admin/images/photos/".Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt="">
-                                {{-- <img src="{{ url('admin/images/photos/'.Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt=""> --}}
                                 @endif
-                            </div>
-                            <div class="dropdown ms-auto">
-                                <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="true">{{ $adminDetails['type'] }}</a>
-
                             </div>
                         </div>
                     </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin;
-use Illuminate\Http\Request;
 use Image;
+use App\Models\Admin;
+use App\Models\Vendor;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
 class AdminController extends Controller
 {
     public function dashboard()
@@ -81,33 +83,23 @@ class AdminController extends Controller
             // $this->validate($request,$rules);
 
             // Update admin image
-            if($request->hasFile('image')){
-                $image_temp = $request->file('image');
-                if($image_temp->isValid()){
-                    $extension = $image_temp->getClientOriginalExtension();
+            if($request->hasFile('photo')){
+                $image_tmp = $request->file('photo');
+                if($image_tmp->isValid()){
+                     $extension = $image_tmp->getClientOriginalExtension();
 
-                     $imageName = rand(1111,9999).'.'.$extension;
-                     $imagePath = 'admin/images/photos/'.$imageName;
+                     $imageName = rand(111,99999).'.'.$extension;
+                     $imagePath = 'storage/images/'.$imageName;
 
-                     Image::make($image_temp)->save($imagePath);
-                }
+                    }
+                    Image::make($image_tmp)->save($imagePath);
             }
-
-            // if($request->hasfile('image')){
-            //     $newFile = $request->file('image');
-            //     $file_path = $newFile->store('/admin/images/photos/');
-            //     Admin::create([
-            //         'image'=>$file_path
-            //     ]);
-            // }
+            // $uploadedFileUrl = $request->image->storeOnCloudinary(Admin::CLOUDINARY_FOLDER)->getFileName();
 
 
 
 
-
-
-
-            Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile']]);
+            Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile'],'photo'=>$data['photo']]);
             return redirect()->back()->with('success','Admin details updated successfully');
         }
         return view('admin.settings.reset-password');
@@ -122,6 +114,61 @@ class AdminController extends Controller
         }else{
             return "false";
         };
+    }
+
+
+    // Update Vendor details
+    public function updateVendorDetails(Request $request, $slug)
+    {
+        if($slug=="personal"){
+            if($request->isMethod('post')){
+                $data = $request->all();
+
+                $rules = [
+                    'name'     => 'required|regex:/^[\pL\s\-]+$/u',
+                    'phone' => 'required|numeric',
+                ];
+
+                // $this->validate($request,$rules);
+
+                // Update admin image
+                if($request->hasFile('image')){
+                    $image_temp = $request->file('image');
+                    if($image_temp->isValid()){
+                        $extension = $image_temp->getClientOriginalExtension();
+
+                         $imageName = rand(1111,9999).'.'.$extension;
+                         $imagePath = 'admin/images/photos/'.$imageName;
+
+                         Image::make($image_temp)->save($imagePath);
+                    }
+                }
+                // Update in admins Table
+                Admin::where('id', Auth::guard('admin')->user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile']]);
+
+                // Update in vendors table
+                Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->update(
+                    [
+                        'name'=>$data['name'],
+                        'mobile'=>$data['mobile'],
+                        'address'=>$data['address'],
+                        'city'=>$data['city'],
+                        'country'=>$data['country'],
+                        'pincode'=>$data['pincode'],
+                        'state'=>$data['state'],
+                    ]);
+                return redirect()->back()->with('success','Vendor details updated successfully');
+            }
+            $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
+        } else if($slug=="business"){
+
+        } else if($slug=="bank"){
+
+        }else if($slug=="shop"){
+
+        }
+
+        return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
     }
 
     public function register()

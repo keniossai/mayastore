@@ -36,7 +36,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'update-details', 'AdminController@updateProfileDetails');
 
         // Vendor Profile
-        Route::match(['get', 'post'], 'vendor-details/{slug}', 'AdminController@updateVendorDetails');
+        Route::match(['get', 'post'], 'vendor-profile/{slug}', 'AdminController@updateVendorDetails');
 
         // Admin Logout
         Route::get('logout', 'AdminController@logout');

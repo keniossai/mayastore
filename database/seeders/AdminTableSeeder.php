@@ -14,15 +14,15 @@ class AdminTableSeeder extends Seeder
     public function run(): void
     {
         $adminRecords = [
-            ['id' => 2,
+            ['id' => 1,
             'name'=>'Kate Farai',
             'type'=>'vendor',
             'mobile'=>'09200299221',
             'email'=>'kate@gmail.com',
             'password'=>'$2y$12$9vh/c6UDSxppbMqLPHKSzOOHezWRio2fAL2CtiB54SQT/evBTSSXO',
             'vendor_id'=>1,
-            'image'=>'',
-            'status'=>0 ],
+            'photo'=>'',
+            'status'=>1 ],
         ];
 
         Admin::insert($adminRecords);

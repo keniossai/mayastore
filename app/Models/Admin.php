@@ -10,4 +10,6 @@ class Admin extends Authenticatable
 {
     use HasFactory;
     protected $guard = 'admin';
+
+    const CLOUDINARY_FOLDER = 'mayastore/users/';
 }

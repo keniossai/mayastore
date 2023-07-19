@@ -22,10 +22,10 @@ class VendorsTableSeeder extends Seeder
                 'city'=>'Akure',
                 'state'=>'Ondo',
                 'Country'=>'Nigeria',
-                'pincode'=>'22123',
+                'zipcode'=>'22123',
                 'mobile'=>'2553782922',
                 'email'=>'kate@gmail.com',
-                'status'=>0
+                'status'=>1
             ]
         ];
 

@@ -70,6 +70,7 @@ return [
     */
 
     'links' => [
+        'driver' => 'local',
         public_path('storage') => storage_path('app/public'),
     ],
 

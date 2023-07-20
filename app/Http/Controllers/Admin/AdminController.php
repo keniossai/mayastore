@@ -91,8 +91,8 @@ class AdminController extends Controller
                      $imageName = rand(111,99999).'.'.$extension;
                      $imagePath = 'storage/images/'.$imageName;
 
+                     Image::make($image_tmp)->save($imagePath);
                     }
-                    Image::make($image_tmp)->save($imagePath);
             }
             // $uploadedFileUrl = $request->image->storeOnCloudinary(Admin::CLOUDINARY_FOLDER)->getFileName();
 

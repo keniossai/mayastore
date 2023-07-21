@@ -119,7 +119,12 @@
                             <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="header-info2 d-flex align-items-center">
                                     <div class="header-media">
-                                        <img src="images/tab/1.jpg" alt="">
+                                        @if(!empty(Auth::guard('admin')->user('superadmin')->photo))
+                                        <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="img-fluid rounded-circle" alt="">
+                                        @else
+                                        <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="img-fluid rounded-circle" alt="">
+
+                                        @endif
                                     </div>
                                     <div class="header-info">
                                         <h6>{{ Auth::guard('admin')->user()->name }}</h6>
@@ -131,7 +136,12 @@
                                 <div class="card border-0 mb-0">
                                     <div class="card-header py-2">
                                         <div class="products">
-                                            <img src="images/tab/1.jpg" class="avatar avatar-md" alt="">
+                                            @if(!empty(Auth::guard('admin')->user('superadmin')->photo))
+                                            <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="avatar avatar-md" alt="">
+                                            @else
+                                            <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="avatar avatar-md" alt="">
+
+                                            @endif
                                             <div>
                                                 <h6>{{ Auth::guard('admin')->user()->name }}</h6>
                                                 <span>{{ Auth::guard('admin')->user()->email }}</span>

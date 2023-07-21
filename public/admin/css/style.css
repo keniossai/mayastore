@@ -23855,7 +23855,7 @@ input#checkAll.form-check-input:checked {
     font-size: 16px;
     font-weight: 100;
     border-radius: 50px;
-    height: 50px;
+    /* height: 50px; */
 
 }
 
@@ -27387,7 +27387,7 @@ button {
   position: relative;
   border: 0rem solid transparent;
   border-radius: 10px;
-  height: calc(100% - 30px);
+  /* height: calc(100% - 30px); */
   border-color: #f4f4f4;
   box-shadow: 0 5px 10px rgba(51,66,87,.05);
   transition: all .3s ease;
@@ -32161,9 +32161,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .profile-form .form-label {
   color: #6e6e6e;
-  font-size: 15px;
+  font-size: 13px;
   margin-bottom: 12px;
-  font-weight: 400; }
+  font-weight: 300; }
 
 .profile-form .btn-light:hover, .profile-form .btn-light:focus {
   color: #888888; }

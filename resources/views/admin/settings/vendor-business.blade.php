@@ -1,5 +1,7 @@
 @extends('admin.layout.app')
 
+@section('title', 'Vendor Profile | Shop info')
+
 @section('content')
 <div class="content-body">
     <div class="page-titles">
@@ -10,7 +12,7 @@
                     <path d="M2.125 6.375L8.5 1.41667L14.875 6.375V14.1667C14.875 14.5424 14.7257 14.9027 14.4601 15.1684C14.1944 15.4341 13.8341 15.5833 13.4583 15.5833H3.54167C3.16594 15.5833 2.80561 15.4341 2.53993 15.1684C2.27426 14.9027 2.125 14.5424 2.125 14.1667V6.375Z" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M6.375 15.5833V8.5H10.625V15.5833" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
-                Home </a>
+                Business Information </a>
             </li>
         </ol>
     </div>
@@ -33,14 +35,6 @@
                                     <span>Phone</span>
                                     <p>+91 12345647890</p>
                                 </li>
-                                <li>
-                                    <span>Date of birth</span>
-                                    <p>13 June 1996</p>
-                                </li>
-                                <li>
-                                    <span>Position</span>
-                                    <p>Computer Engineer</p>
-                                </li>
                             </ul>
                         </div>
                         <span class="mt-3 d-block">Social</span>
@@ -52,16 +46,11 @@
                         </ul>
                         <div class="d-flex mt-4 justify-content-end">
                             <a href="javascript:void(0)" class="btn btn-danger btn-sm light me-2"><i class="fa-solid fa-trash me-1"></i>Delete</a>
-                            <button type="button" class="modal-btn btn btn-primary btn-sm  ms-2 " data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                                <i class="fa-solid fa-pen-to-square me-1"></i>
-                                <span>Edit </span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-9">
-                <h4 class="heading">Membership</h4>
                 <div class="card h-auto">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap">
                         <div class="d-flex align-items-center c-busiess">
@@ -77,207 +66,102 @@
                         </div>
                     </div>
                 </div>
-                <div class="card h-auto">
-                    <div class="card-header py-3">
-                        <h4 class="heading mb-0">Payment History</h4>
+                <div class="card profile-card card-bx m-b30">
+                    <div class="card-header">
+                        <h6 class="title">Business Info</h6>
                     </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive active-projects style-1">
-                            <div id="empoloyees-tbl_wrapper" class="dataTables_wrapper no-footer"><div class="dt-buttons"><button class="dt-button buttons-excel buttons-html5 btn btn-sm border-0" tabindex="0" aria-controls="empoloyees-tbl" type="button"><span><i class="fa-solid fa-file-excel"></i> Export Report</span></button> </div><table id="empoloyees-tbl" class="table dataTable no-footer" role="grid" aria-describedby="empoloyees-tbl_info">
-                                <thead>
-                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="empoloyees-tbl" rowspan="1" colspan="1" style="width: 116.567px;" aria-sort="ascending" aria-label="REFERENCE: activate to sort column descending">REFERENCE</th><th class="sorting" tabindex="0" aria-controls="empoloyees-tbl" rowspan="1" colspan="1" style="width: 250.517px;" aria-label="PRODUCT: activate to sort column ascending">PRODUCT</th><th class="sorting" tabindex="0" aria-controls="empoloyees-tbl" rowspan="1" colspan="1" style="width: 129.683px;" aria-label="STATUS: activate to sort column ascending">STATUS</th><th class="sorting" tabindex="0" aria-controls="empoloyees-tbl" rowspan="1" colspan="1" style="width: 148.767px;" aria-label="DATE: activate to sort column ascending">DATE</th><th class="sorting" tabindex="0" aria-controls="empoloyees-tbl" rowspan="1" colspan="1" style="width: 103.333px;" aria-label="AMOUNT: activate to sort column ascending">AMOUNT</th></tr>
-                                </thead>
-                                <tbody>
-
-
-
-
-
-
-                                <tr role="row" class="odd">
-                                        <td class="sorting_1"><span>#5454421</span></td>
-                                        <td>
-                                            <span>Salesforce CRM</span>
-                                        </td>
-                                        <td><span class="badge badge-primary light border-0">Inprogress</span></td>
-                                        <td>
-                                            <span>13 March 2023</span>
-                                        </td>
-                                        <td>
-                                            <span>$500</span>
-                                        </td>
-                                    </tr><tr role="row" class="even">
-                                        <td class="sorting_1"><span>#5454421</span></td>
-                                        <td>
-                                            <span>Shopify eCommerce</span>
-                                        </td>
-                                        <td><span class="badge badge-success light border-0">Completed</span></td>
-                                        <td>
-                                            <span>13 March 2023</span>
-                                        </td>
-                                        <td>
-                                            <span>$500</span>
-                                        </td>
-                                    </tr><tr role="row" class="odd">
-                                        <td class="sorting_1"><span>#552145252</span></td>
-                                        <td>
-                                            <span>Zoom video conferencing</span>
-                                        </td>
-                                        <td><span class="badge badge-danger light border-0">Pending</span></td>
-                                        <td>
-                                            <span>12 February 2022</span>
-                                        </td>
-                                        <td>
-                                            <span>$900</span>
-                                        </td>
-                                    </tr><tr role="row" class="even">
-                                        <td class="sorting_1"><span>#552145252</span></td>
-                                        <td>
-                                            <span>Google Chrome</span>
-                                        </td>
-                                        <td><span class="badge badge-danger light border-0">Pending</span></td>
-                                        <td>
-                                            <span>12 February 2022</span>
-                                        </td>
-                                        <td>
-                                            <span>$900</span>
-                                        </td>
-                                    </tr><tr role="row" class="odd">
-                                        <td class="sorting_1"><span>#5857455</span></td>
-                                        <td>
-                                            <span>Slack collaboration platform</span>
-                                        </td>
-                                        <td><span class="badge badge-primary light border-0">Inprogress</span></td>
-                                        <td>
-                                            <span>24 January 2022</span>
-                                        </td>
-                                        <td>
-                                            <span>$800</span>
-                                        </td>
-                                    </tr></tbody>
-
-                            </table><div class="dataTables_info" id="empoloyees-tbl_info" role="status" aria-live="polite">Showing 1 to 5 of 6 entries</div><div class="dataTables_paginate paging_simple_numbers" id="empoloyees-tbl_paginate"><a class="paginate_button previous disabled" aria-controls="empoloyees-tbl" data-dt-idx="0" tabindex="0" id="empoloyees-tbl_previous"><i class="fa-solid fa-angle-left"></i></a><span><a class="paginate_button current" aria-controls="empoloyees-tbl" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="empoloyees-tbl" data-dt-idx="2" tabindex="0">2</a></span><a class="paginate_button next" aria-controls="empoloyees-tbl" data-dt-idx="3" tabindex="0" id="empoloyees-tbl_next"><i class="fa-solid fa-angle-right"></i></a></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-9 col-xxl-8">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h4 class="heading mb-0">Payment Methods</h4>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4">
-                                <img src="images/credit.png" alt="" class="w-100">
-                            </div>
-                            <div class="col-xl-8 col-lg-8">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6">
-                                        <div class="c-card-details">
-                                            <ul>
-                                                <li>
-                                                    <span>Name:</span>
-                                                    <h6>Henry Saiplay</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Number:</span>
-                                                    <h6>1234 5678 9101 1213</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Expires:</span>
-                                                    <h6>11/2023</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Type:</span>
-                                                    <h6>Master Card</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Issuer:</span>
-                                                    <h6>IDBF</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Id:</span>
-                                                    <h6>1-85222gfgvv52</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6">
-                                        <div class="c-card-details">
-                                            <ul>
-                                                <li>
-                                                    <span>Billing address:</span>
-                                                    <h6>USA </h6>
-                                                </li>
-                                                <li>
-                                                    <span>Phone:</span>
-                                                    <h6>+01 123 456 789 0</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Email:</span>
-                                                    <h6>demo@gmail.com</h6>
-                                                </li>
-                                                <li>
-                                                    <span>Origin:</span>
-                                                    <h6>Uk</h6>
-                                                </li>
-                                                <li>
-                                                    <span>CVC check:</span>
-                                                    <h6>Done</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                    <form class="profile-form" action="{{ url('admin/vendor-profile/business') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Shop Name</label>
+                                    <input type="text" class="form-control" name="shop_name" placeholder="Casablanca">
                                 </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Registration Name</label>
+                                    <input type="text" class="form-control" name="company_reg__name" placeholder="e.g Casablanca Limited">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Owner's Name</label>
+                                    <input type="text" class="form-control" name="vendor_name" value="{{ $vendorDetails['vendor_name'] }}" placeholder="e.g Mary Doe" readonly>
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="text" class="form-control" name="email" value="{{ $vendorDetails['email'] }}" placeholder="e.g chido@co.ng" readonly>
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" name="" value="{{ $vendorDetails['mobile'] }}" placeholder="e.g +234(73738) 299">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Shop Address 1</label>
+                                    <input type="text" class="form-control" name="address_one" value="{{ $vendorDetails['address_one'] }}" placeholder="Enter Address 1">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Shop Address 2</label>
+                                    <input type="text" class="form-control" name="address_two" value="{{ $vendorDetails['address_two'] }}"  placeholder="Enter Address 2">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Business Entity</label>
+                                    <select name="" id="" class="form-control" name="business_entity">
+                                        <option value="">{{ $vendorDetails['business_entity'] }}</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">State</label>
+                                    <input type="text" class="form-control" name="state" value="{{ $vendorDetails['state'] }}" placeholder="Lagos">
+                                </div>
+
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="form-control" name="city" value="{{ $vendorDetails['city'] }}" placeholder="Ikeja">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Country</label>
+                                    <input type="text" class="form-control" name="country" value="{{ $vendorDetails['country'] }}" placeholder="Somewhere in the world">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Means of ID</label>
+                                    <select name="identification" id="" class="form-control">
+                                        <option value="">{{ $vendorDetails['identification'] }}</option>
+                                        <option value="">Passport</option>
+                                        <option value="">Driver's License</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">CAC Registration No</label>
+                                    <input type="text" class="form-control" name="cac_reg_number" value="{{ $vendorDetails['cac_reg_number'] }}" placeholder="e.g RC00000002">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">CAC Certificate</label>
+                                    <input type="file" style="height: 44px;" class="form-control" name="" placeholder="e.g RC00000002">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Tax ID</label>
+                                    <input type="text" class="form-control" name="tax_id" value="{{ $vendorDetails['tax_id'] }}" placeholder="e.g: 2993883">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Legal Representatives</label>
+                                    <input type="text" class="form-control" name="legal_rep" value="{{ $vendorDetails['legal_rep'] }}" placeholder="e.g: Lawyer">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Address Proof</label>
+                                    <input type="text" class="form-control" name="" placeholder="">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Proof Image</label>
+                                    <input type="file" class="form-control" name="" />
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-xxl-4">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h4 class="heading mb-0">Premium user</h4>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="c-work">
-                            <div class="c-task bg-primary">
-                                <p>Earnings<i class="fa-solid fa-arrow-down ms-2"></i></p>
-                                <span>$50,585</span>
-                            </div>
-                            <div class="c-task bg-success">
-                                <p>Project <i class="fa-solid fa-arrow-up ms-2"></i></p>
-                                <span>415</span>
-                            </div>
-                            <div class="c-task bg-secondary">
-                                <p>Hours <i class="fa-solid fa-arrow-up ms-2"></i></p>
-                                <span>200</span>
-                            </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Save Changes</button>
                         </div>
-                        <ul class="c-primium">
-                            <li>
-                                <h6>Account ID:</h6>
-                                <span>#5-658A555c</span>
-                            </li>
-                            <li>
-                                <h6>Billing Email:</h6>
-                                <span>demo@gmail.com</span>
-                            </li>
-                            <li>
-                                <h6>Billing Address:</h6>
-                                <span>Po.123 USA</span>
-                            </li>
-                            <li>
-                                <h6>Language:</h6>
-                                <span>English</span>
-                            </li>
-                            <li>
-                                <h6>Tax ID:</h6>
-                                <span>W3-52325</span>
-                            </li>
-                        </ul>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

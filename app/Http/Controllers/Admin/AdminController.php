@@ -171,7 +171,59 @@ class AdminController extends Controller
             }
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         } else if($slug=="business"){
+            if($request->isMethod('post')){
+                $data = $request->all();
+
+                $rules = [
+                    'vendor_name'     => 'required|regex:/^[\pL\s\-]+$/u',
+                    'company_reg__name' =>'required',
+                    'shop_name' =>'required',
+                    'email' =>'required',
+                    'address_one' =>'required',
+                    'business_entity' =>'required',
+                    'identification' =>'required',
+                    'address_proof' =>'required',
+                    'proof_image' =>'required|image',
+                    'cac_proof_image' =>'required|image',
+                    'mobile' => 'required|numeric',
+                    'cac_reg_number' => 'required',
+                ];
+
+                $this->validate($request,$rules);
+
+                // Update VendorBusinessDetail image
+                if($request->hasFile('proof_image')){
+                    $image_tmp = $request->file('proof_image');
+                    if($image_tmp->isValid()){
+                        // Get Image Extension
+                        $extension = $image_tmp->getClientOriginalExtension();
+                        // Generate New Image Name
+                        $imageName = rand(111,99999).'.'.$extension;
+                        $imagePath = 'storage/images/proofs'.$imageName;
+                        // Upload Image
+                        Image::make($image_tmp)->save($imagePath);
+                    }
+                }
+
+
+                // Update in vendors_business_table
+                VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update(
+                    [
+                        'vendor_name'=>$data['vendor_name'],
+                        'company_reg__name'=>$data['company_reg__name'],
+                        'shop_name'=>$data['shop_name'],
+                        'email'=>$data['email'],
+                        'address_one'=>$data['address_one'],
+                        'country'=>$data['country'],
+                        'proof_image'=>$imageName,
+                        'cac_proof_image'=>$data['cac_proof_image'],
+                        'cac_reg_number'=>$data['cac_reg_number'],
+                        'state'=>$data['state'],
+                    ]);
+                return redirect()->back()->with('success','Vendor details updated successfully');
+            }
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
+            return view('admin.settings.vendor-business', compact('slug','vendorDetails'));
         } else if($slug=="bank"){
 
         }else if($slug=="shop"){

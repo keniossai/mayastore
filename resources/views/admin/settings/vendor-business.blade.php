@@ -159,7 +159,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-primary">Save Changes</button>
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
                         </div>
                     </form>
                 </div>

@@ -71,7 +71,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Phone Number</label>
-                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" value="{{ $adminDetails['mobile'] }}" class="form-control" maxlength="11" minlength="11">
+                                                            <input type="phone" placeholder="Enter a digi "  name="mobile" id="mobile" value="{{ $adminDetails['mobile'] }}" class="form-control" maxlength="11" minlength="11">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Email</label>

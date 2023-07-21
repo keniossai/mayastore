@@ -27,9 +27,8 @@
                         </div>
                         <div class="profile-info">
                             <div class="profile-photo">
-
-                                @if(!empty(Auth::guard('admin')->user('vendor')->image))
-                                <img src="{{ asset("admin/images/photos/".Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt="">
+                                @if(!empty(Auth::guard('admin')->user('vendor')->photo))
+                                <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="img-fluid rounded-circle" alt="">
                                 @endif
                             </div>
                         </div>
@@ -70,7 +69,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Phone Number</label>
-                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" value="{{ $vendorDetails['mobile'] }}" class="form-control" maxlength="11" minlength="11">
+                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" id="mobile" value="{{ $vendorDetails['mobile'] }}" class="form-control" maxlength="11" minlength="11">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Email</label>

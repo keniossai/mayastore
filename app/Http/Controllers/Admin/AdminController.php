@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Image;
 use App\Models\Admin;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\VendorsBusinessDetail;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
 {
@@ -69,13 +70,19 @@ class AdminController extends Controller
         return view('admin.settings.reset-password', compact('adminDetails'));
     }
 
-    public function updateProfileDetails(Request $request)
+    // UPDATE ADMIN DETAILS
+    public function updateAdminDetails(Request $request)
     {
         if($request->isMethod('post')){
             $data = $request->all();
             // dd($request->all());
 
-            // $this->validate($request,$rules);
+            $rules = [
+                'name'     => 'required|regex:/^[\pL\s\-]+$/u',
+                'mobile' => 'required|numeric',
+            ];
+
+            $this->validate($request,$rules);
 
             $request->validate([
                 'image'=>'image|mimes:jpeg,png,jpg,|max:2048'
@@ -83,27 +90,21 @@ class AdminController extends Controller
 
             // Update admin image
             if($request->hasFile('photo')){
-                $image_name = $request->file('photo');
-                if($image_name->isValid()){
-                     $extension = $image_name->getClientOriginalExtension();
-
+                $image_tmp = $request->file('photo');
+                if($image_tmp->isValid()){
+                    // Get Image Extension
+                     $extension = $image_tmp->getClientOriginalExtension();
+                    // Generate New Image Name
                      $imageName = rand(111,99999).'.'.$extension;
                      $imagePath = 'storage/images/'.$imageName;
-
-                     Image::make($image_name)->save($imagePath);
+                    // Upload Image
+                     Image::make($image_tmp)->save($imagePath);
                 }
             }
-            // $uploadedFileUrl = $request->image->storeOnCloudinary(Admin::CLOUDINARY_FOLDER)->getFileName();
-
-
-
-
-
-
             Admin::where('id', Auth::guard('admin')->user()->id)->update([
                 'name'=>$data['name'],
                 'mobile'=>$data['mobile'],
-                'photo'=>$data['photo']]);
+                'photo'=>$imageName]);
             return redirect()->back()->with('success','Admin details updated successfully');
         }
         return view('admin.settings.reset-password');
@@ -121,7 +122,7 @@ class AdminController extends Controller
     }
 
 
-    // Update Vendor details
+    // UPDATE VENDOR DETAILS
     public function updateVendorDetails(Request $request, $slug)
     {
         if($slug=="personal"){
@@ -130,28 +131,29 @@ class AdminController extends Controller
 
                 $rules = [
                     'name'     => 'required|regex:/^[\pL\s\-]+$/u',
-                    'phone' => 'required|numeric',
+                    'mobile' => 'required|numeric',
                 ];
 
-                // $this->validate($request,$rules);
+                $this->validate($request,$rules);
 
-                // Update admin image
+                // Update Vendor image
                 if($request->hasFile('photo')){
                     $image_tmp = $request->file('photo');
                     if($image_tmp->isValid()){
+                        // Get Image Extension
                         $extension = $image_tmp->getClientOriginalExtension();
-
-                         $imageName = rand(111,9999).'.'.$extension;
-                         $imagePath = 'storage/images/vendor'.$imageName;
-
-                         Image::make($image_tmp)->save($imagePath);
+                        // Generate New Image Name
+                        $imageName = rand(111,99999).'.'.$extension;
+                        $imagePath = 'storage/images/'.$imageName;
+                        // Upload Image
+                        Image::make($image_tmp)->save($imagePath);
                     }
                 }
-                // Update in admins Table
+                // Update in Vendor Table
                 Admin::where('id', Auth::guard('admin')->user()->id)->update([
                     'name'=>$data['name'],
                     'mobile'=>$data['mobile'],
-                    'photo'=>$data['photo'],
+                    'photo'=>$imageName
                 ]);
 
                 // Update in vendors table
@@ -169,7 +171,7 @@ class AdminController extends Controller
             }
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         } else if($slug=="business"){
-
+            $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         } else if($slug=="bank"){
 
         }else if($slug=="shop"){

@@ -33,7 +33,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('check-admin-password','AdminController@checkAdminPassword');
 
         // Update admin profile
-        Route::match(['get', 'post'], 'update-details', 'AdminController@updateProfileDetails');
+        Route::match(['get', 'post'], 'update-details', 'AdminController@updateAdminDetails');
 
         // Vendor Profile
         Route::match(['get', 'post'], 'vendor-profile/{slug}', 'AdminController@updateVendorDetails');

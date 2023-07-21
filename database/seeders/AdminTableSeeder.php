@@ -14,11 +14,11 @@ class AdminTableSeeder extends Seeder
     public function run(): void
     {
         $adminRecords = [
-            ['id' => 1,
-            'name'=>'Kate Farai',
+            ['id' => 2,
+            'name'=>'Maya Ossai',
             'type'=>'vendor',
-            'mobile'=>'09200299221',
-            'email'=>'kate@gmail.com',
+            'mobile'=>'08162951236',
+            'email'=>'maya@gmail.com',
             'password'=>'$2y$12$9vh/c6UDSxppbMqLPHKSzOOHezWRio2fAL2CtiB54SQT/evBTSSXO',
             'vendor_id'=>1,
             'photo'=>'',

@@ -98,10 +98,10 @@
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>
-                                                            <input style="height: 40px;" type="file" name="image" id="image" class="form-control">
+                                                            <input style="height: 40px;" type="file" name="photo" id="photo" class="form-control">
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-primary" type="submit">Sign in</button>
+                                                    <button class="btn btn-primary" type="submit">Update Profile</button>
                                                 </form>
                                             </div>
                                         </div>

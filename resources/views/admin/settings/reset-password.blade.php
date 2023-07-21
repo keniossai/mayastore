@@ -28,7 +28,7 @@
                         <div class="profile-info">
                             <div class="profile-photo">
 
-                                <img src="{{ $adminDetails['photo'] }}" class="img-fluid rounded-circle" alt="">
+                                <img src="{{ asset('storage/images/'.$adminDetails['photo']) }}" class="img-fluid rounded-circle" alt="">
                                 {{-- @if(!empty(Auth::guard('admin')->user()->image))
                                 <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->image) }}" class="img-fluid rounded-circle" alt="">
                                 @endif --}}
@@ -78,13 +78,8 @@
                                                             <input type="email"  name="email" value="{{ $adminDetails['email'] }}" class="form-control" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label">Type</label>
-                                                            <select class="form-control" name="type">
-                                                                <option selected="">{{ $adminDetails['type'] }}</option>
-                                                                <option>Option 1</option>
-                                                                <option>Option 2</option>
-                                                                <option>Option 3</option>
-                                                            </select>
+                                                            <label class="form-label">User Type</label>
+                                                            <input type="type"  name="type" value="{{ $adminDetails['type'] }}" class="form-control" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>

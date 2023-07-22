@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\VendorsBusinessDetail;
+use App\Models\VendorsBankDetail;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
@@ -229,7 +230,27 @@ class AdminController extends Controller
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
             // dd($vendorDetails);
         }elseif($slug=="bank"){
+            if($request->isMethod('post')){
+                $data = $request->all();
 
+                $rules = [
+                    'account_holder_name' =>'required',
+                    'bank_name' =>'required',
+                    'account_number' =>'required',
+                ];
+
+                $this->validate($request,$rules);
+
+                // Update in vendors_business_table
+                VendorsBankDetail::where('vendor_id',Auth::guard('admin')->user()->vendor_id)->update(
+                    [
+                        'account_holder_name'=>$data['account_holder_name'],
+                        'bank_name'=>$data['bank_name'],
+                        'account_number'=>$data['account_number'],
+                    ]);
+                return redirect()->back()->with('success','Bank details updated successfully');
+            }
+            $vendorDetails = VendorsBankDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         }elseif($slug=="shop"){
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         }

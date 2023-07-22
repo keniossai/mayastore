@@ -132,6 +132,7 @@ class AdminController extends Controller
                 $rules = [
                     'name'     => 'required|regex:/^[\pL\s\-]+$/u',
                     'mobile' => 'required|numeric',
+                    'photo' => 'required|image'
                 ];
 
                 $this->validate($request,$rules);
@@ -149,7 +150,7 @@ class AdminController extends Controller
                         Image::make($image_tmp)->save($imagePath);
                     }
                 }
-                // Update in Vendor Table
+                // Update in Admin Table
                 Admin::where('id', Auth::guard('admin')->user()->id)->update([
                     'name'=>$data['name'],
                     'mobile'=>$data['mobile'],
@@ -170,30 +171,26 @@ class AdminController extends Controller
                 return redirect()->back()->with('success','Vendor details updated successfully');
             }
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
-        } else if($slug=="business"){
+        } elseif($slug=="business"){
             if($request->isMethod('post')){
                 $data = $request->all();
 
                 $rules = [
-                    'vendor_name'     => 'required|regex:/^[\pL\s\-]+$/u',
-                    'company_reg__name' =>'required',
+                    'company_name' =>'required',
                     'shop_name' =>'required',
-                    'email' =>'required',
                     'address_one' =>'required',
                     'business_entity' =>'required',
-                    'identification' =>'required',
-                    'address_proof' =>'required',
-                    'proof_image' =>'required|image',
-                    'cac_proof_image' =>'required|image',
-                    'mobile' => 'required|numeric',
-                    'cac_reg_number' => 'required',
+                    'means_id' =>'required',
+                    'means_id_proof' =>'required|image',
+                    'phone_no' => 'required|numeric',
+                    'license_id' => 'required',
                 ];
 
                 $this->validate($request,$rules);
 
                 // Update VendorBusinessDetail image
-                if($request->hasFile('proof_image')){
-                    $image_tmp = $request->file('proof_image');
+                if($request->hasFile('means_id_proof')){
+                    $image_tmp = $request->file('means_id_proof');
                     if($image_tmp->isValid()){
                         // Get Image Extension
                         $extension = $image_tmp->getClientOriginalExtension();
@@ -204,29 +201,33 @@ class AdminController extends Controller
                         Image::make($image_tmp)->save($imagePath);
                     }
                 }
-
-
                 // Update in vendors_business_table
                 VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update(
                     [
-                        'vendor_name'=>$data['vendor_name'],
-                        'company_reg__name'=>$data['company_reg__name'],
+                        'company_name'=>$data['company_name'],
                         'shop_name'=>$data['shop_name'],
-                        'email'=>$data['email'],
+                        'business_email'=>$data['business_email'],
                         'address_one'=>$data['address_one'],
-                        'country'=>$data['country'],
-                        'proof_image'=>$imageName,
-                        'cac_proof_image'=>$data['cac_proof_image'],
-                        'cac_reg_number'=>$data['cac_reg_number'],
+                        'address_two'=>$data['address_two'],
+                        'phone_no'=>$data['phone_no'],
                         'state'=>$data['state'],
+                        'city'=>$data['city'],
+                        'country'=>$data['country'],
+                        'means_id'=>$data['means_id'],
+                        'means_id_proof'=>$imageName,
+                        'postal_code'=>$data['postal_code'],
+                        'legal_rep'=>$data['legal_rep'],
+                        'legal_address'=>$data['legal_address'],
+                        'license_id'=>$data['license_id'],
+                        'license_proof'=>$data['license_proof'],
+                        'manager_name'=>$data['manager_name'],
+                        'manager_phone'=>$data['manager_phone'],
                     ]);
-                return redirect()->back()->with('success','Vendor details updated successfully');
+                return redirect()->back()->with('success','Business details updated successfully');
             }
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
-            return view('admin.settings.vendor-business', compact('slug','vendorDetails'));
-        } else if($slug=="bank"){
-
-        }else if($slug=="shop"){
+            // dd($vendorDetails);
+        } elseif($slug=="bank"){
 
         }
 

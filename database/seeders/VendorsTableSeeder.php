@@ -17,14 +17,14 @@ class VendorsTableSeeder extends Seeder
         $vendorRecords = [
             [
                 'id'=>1,
-                'name'=>'Kate Farai',
-                'address'=>'55, Akure ondo state',
-                'city'=>'Akure',
-                'state'=>'Ondo',
+                'name'=>'Maya Ossai',
+                'address'=>'18, Bolaji Banwo',
+                'city'=>'Surulere',
+                'state'=>'Lagos',
                 'Country'=>'Nigeria',
-                'zipcode'=>'22123',
+                'zipcode'=>'1001121',
                 'mobile'=>'2553782922',
-                'email'=>'kate@gmail.com',
+                'email'=>'mayao@gmail.com',
                 'status'=>1
             ]
         ];

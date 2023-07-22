@@ -230,9 +230,11 @@ class AdminController extends Controller
             // dd($vendorDetails);
         }elseif($slug=="bank"){
 
-        }
+        }elseif($slug=="shop"){
 
+        }
         return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
+
     }
 
     public function register()

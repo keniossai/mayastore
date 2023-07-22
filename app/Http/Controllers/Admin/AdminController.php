@@ -231,7 +231,7 @@ class AdminController extends Controller
         }elseif($slug=="bank"){
 
         }elseif($slug=="shop"){
-
+            $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
         }
         return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
 

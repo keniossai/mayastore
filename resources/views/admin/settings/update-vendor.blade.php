@@ -200,7 +200,7 @@
                 </div>
             </div>
             <div class="col-xl-9">
-                <div class="card h-auto">
+                {{-- <div class="card h-auto">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap">
                         <div class="d-flex align-items-center c-busiess">
                             <img src="images/economics.png" class="avatar">
@@ -214,7 +214,7 @@
                             <a href="javascript:void(0)" class="btn btn-primary btn-sm ms-2">Update plan</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="card profile-card card-bx m-b30">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -335,6 +335,96 @@
 </div>
 @elseif($slug=="bank")
 
+@elseif($slug=="shop")
+@section('title', 'Vendor Profile | Shop')
+<div class="content-body" style="min-height: 900px;">
+    <!-- row -->
+    <div class="page-titles">
+        <ol class="breadcrumb">
+            <li><h5 class="bc-title">Dashboard</h5></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.125 6.375L8.5 1.41667L14.875 6.375V14.1667C14.875 14.5424 14.7257 14.9027 14.4601 15.1684C14.1944 15.4341 13.8341 15.5833 13.4583 15.5833H3.54167C3.16594 15.5833 2.80561 15.4341 2.53993 15.1684C2.27426 14.9027 2.125 14.5424 2.125 14.1667V6.375Z" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6.375 15.5833V8.5H10.625V15.5833" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                Shop </a>
+            </li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card h-auto">
+                    <div class="card-body d-flex align-items-center justify-content-between flex-wrap">
+                        <div class="d-flex align-items-center c-busiess">
+                            <div>
+                                <h5 class="mb-0"> Temporary close </h5>
+                                <span style="font-size: 10px">By turning on temporary close mode your shop will be shown as temporary off in the website and app for the customers.<br> they cannot purchase or place order from your shop</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" class="btn btn-primary btn-sm ms-2">Close Temporary</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header border-0">
+                        <h4 class="heading mb-0">My Shop Info</h4>
+                        <div>
+                            <a href="javascript:void(0)" class="btn btn-light btn-sm me-2">Vacation Mode</a>
+                            <a href="{{ url('admin/vendor-profile/business') }}" class="btn btn-primary btn-sm ms-2">Edit</a>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4">
+                                @if(!empty(Auth::guard('admin')->user('vendor')->photo))
+                                <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="w-50 rounded-sm" alt="">
+
+                                @endif
+                            </div>
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="c-card-details">
+                                            <ul>
+                                                <li>
+                                                    <span>Shop Name:</span>
+                                                    <h6>{{ $vendorDetails['shop_name'] }}</h6>
+                                                </li>
+                                                <li>
+                                                    <span>Phone Number:</span>
+                                                    <h6>{{ $vendorDetails['phone_no'] }}</h6>
+                                                </li>
+                                                <li>
+                                                    <span>Address:</span>
+                                                    <h6>{{ $vendorDetails['address_one'] }}</h6>
+                                                </li>
+                                                <li>
+                                                    <span>Type:</span>
+                                                    <h6>{{ $vendorDetails['license_id'] }}</h6>
+                                                </li>
+                                                <li>
+                                                    <span>Email:</span>
+                                                    <h6>{{ $vendorDetails['business_email'] }}</h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 @endif
 
 @endsection

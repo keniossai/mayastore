@@ -206,7 +206,7 @@
                             <img src="images/economics.png" class="avatar">
                             <div>
                                 <h5 class="mb-0">{{ $vendorDetails['shop_name'] }}<span class="badge badge-danger badge-xs ms-1">Active</span></h5>
-                                <span>Billing monthly | Next payment on 15/02/2023for$590.40</span>
+                                <span>{{ $vendorDetails['address_one'] }}</span>
                             </div>
                         </div>
                         <div>

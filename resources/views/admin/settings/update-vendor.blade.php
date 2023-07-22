@@ -95,7 +95,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Zip Code</label>
-                                                            <input type="zipcode"  name="zipcode" value="{{ $vendorDetails['zipcode'] }}" class="form-control">
+                                                            <input type="text"  name="zipcode" value="{{ $vendorDetails['zipcode'] }}" class="form-control">
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>
@@ -175,17 +175,17 @@
                     <div class="card-body">
                         <div class="c-profile text-center">
                             <img src="images/user1.jpg" class="rounded-circle mb-2">
-                            <h4>Thomas Fleming</h4>
+                            <h4>{{ $vendorDetails['shop_name'] }}</h4>
                         </div>
                         <div class="c-details">
                             <ul>
                                 <li>
                                     <span>Email</span>
-                                    <p>demo123@gmail.com</p>
+                                    <p>{{ $vendorDetails['business_email'] }}</p>
                                 </li>
                                 <li>
                                     <span>Phone</span>
-                                    <p>+91 12345647890</p>
+                                    <p>{{ $vendorDetails['phone_no'] }}</p>
                                 </li>
                             </ul>
                         </div>
@@ -196,9 +196,6 @@
                             <li><a href="javascript:void(0);" class="bg-linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
                             <li><a href="javascript:void(0);" class="bg-skype"><i class="fa-brands fa-skype"></i></a></li>
                         </ul>
-                        <div class="d-flex mt-4 justify-content-end">
-                            <a href="javascript:void(0)" class="btn btn-danger btn-sm light me-2"><i class="fa-solid fa-trash me-1"></i>Delete</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -208,7 +205,7 @@
                         <div class="d-flex align-items-center c-busiess">
                             <img src="images/economics.png" class="avatar">
                             <div>
-                                <h5 class="mb-0">Business board pro<span class="badge badge-danger badge-xs ms-1">Active</span></h5>
+                                <h5 class="mb-0">{{ $vendorDetails['shop_name'] }}<span class="badge badge-danger badge-xs ms-1">Active</span></h5>
                                 <span>Billing monthly | Next payment on 15/02/2023for$590.40</span>
                             </div>
                         </div>
@@ -219,8 +216,17 @@
                     </div>
                 </div>
                 <div class="card profile-card card-bx m-b30">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="card-header">
-                        <h6 class="title">Business Info</h6>
+                        <h6 class="title">Business Information</h6>
                     </div>
                     <form class="profile-form" action="{{ url('admin/vendor-profile/business') }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -246,10 +252,10 @@
                                 </div>
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Business Entity</label>
-                                    <select name="" id="" class="form-control" name="business_entity">
+                                    <select id="business_entity" class="form-control" name="business_entity">
                                         <option value="">{{ $vendorDetails['business_entity'] }}</option>
-                                        <option value="">Registered Business</option>
-                                        <option value="">Sole Propitor</option>
+                                        <option value="Registered Business">Registered Business</option>
+                                        <option value="Sole Propitor">Sole Propitor</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6 m-b30">
@@ -265,6 +271,10 @@
                                     <label class="form-label">State</label>
                                     <input type="text" class="form-control" name="state" id="state" value="{{ $vendorDetails['state'] }}" placeholder="Lagos">
                                 </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Postal Code</label>
+                                    <input type="text" class="form-control" name="postal_code" id="postal_code" value="{{ $vendorDetails['postal_code'] }}" placeholder="Lagos">
+                                </div>
 
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">City</label>
@@ -277,9 +287,10 @@
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Means of ID</label>
                                     <select name="means_id" id="means_id" class="form-control">
-                                        <option value="">{{ $vendorDetails['means_id'] }}</option>
-                                        <option value="">Passport</option>
-                                        <option value="">Driver's License</option>
+                                        <option value="National Identity" @if($vendorDetails['means_id']=="National Identity")selected @endif>National Identity</option>
+                                        <option value="Passport"@if($vendorDetails['means_id']=="Passport")selected @endif>Passport</option>
+                                        <option value="Driver's License"@if($vendorDetails['means_id']=="Driver's License")selected @endif>Driver's License</option>
+                                        <option value="Voters Card"@if($vendorDetails['means_id']=="Voters Card")selected @endif>Voters Card</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6 m-b30">
@@ -293,6 +304,14 @@
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Upload a copy of the CAC Certificate</label>
                                     <input type="file" style="height: 44px;" class="form-control" name="license_proof" id="license_proof" >
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Manager's name</label>
+                                    <input type="text" class="form-control" name="manager_name" id="manager_name" value="{{ $vendorDetails['manager_name'] }}" placeholder="e.g: Lawyer">
+                                </div>
+                                <div class="col-sm-6 m-b30">
+                                    <label class="form-label">Manager's Phone</label>
+                                    <input type="text" class="form-control" name="manager_phone" id="manager_phone" value="{{ $vendorDetails['manager_phone'] }}" placeholder="e.g: Lawyer">
                                 </div>
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Legal Representatives</label>

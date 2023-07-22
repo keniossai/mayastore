@@ -125,6 +125,7 @@ class AdminController extends Controller
     // UPDATE VENDOR DETAILS
     public function updateVendorDetails(Request $request, $slug)
     {
+        // Vendor Personal Details Update
         if($slug=="personal"){
             if($request->isMethod('post')){
                 $data = $request->all();
@@ -171,7 +172,8 @@ class AdminController extends Controller
                 return redirect()->back()->with('success','Vendor details updated successfully');
             }
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
-        } elseif($slug=="business"){
+        }else if($slug=="business"){
+            // Vendor Business Details Update
             if($request->isMethod('post')){
                 $data = $request->all();
 
@@ -179,7 +181,6 @@ class AdminController extends Controller
                     'company_name' =>'required',
                     'shop_name' =>'required',
                     'address_one' =>'required',
-                    'business_entity' =>'required',
                     'means_id' =>'required',
                     'means_id_proof' =>'required|image',
                     'phone_no' => 'required|numeric',
@@ -202,7 +203,7 @@ class AdminController extends Controller
                     }
                 }
                 // Update in vendors_business_table
-                VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->update(
+                VendorsBusinessDetail::where('vendor_id',Auth::guard('admin')->user()->vendor_id)->update(
                     [
                         'company_name'=>$data['company_name'],
                         'shop_name'=>$data['shop_name'],
@@ -227,7 +228,7 @@ class AdminController extends Controller
             }
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
             // dd($vendorDetails);
-        } elseif($slug=="bank"){
+        }elseif($slug=="bank"){
 
         }
 

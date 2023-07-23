@@ -292,7 +292,7 @@
 							<span class="nav-text">Admins</span>
 						</a>
 					</li>
-                    <li><a href="{{ url('admin/subadmins') }}" class="" aria-expanded="false">
+                    <li><a href="{{ url('admin/admins/subadmins') }}" class="" aria-expanded="false">
 						<div class="menu-icon">
 							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 5.95833C2.75 3.55189 2.77577 2.75 5.95833 2.75C9.1409 2.75 9.16667 3.55189 9.16667 5.95833C9.16667 8.36478 9.17682 9.16667 5.95833 9.16667C2.73985 9.16667 2.75 8.36478 2.75 5.95833Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
@@ -304,14 +304,14 @@
 							<span class="nav-text">Sub Admins</span>
 						</a>
 					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+					<li><a class="has-arrow " href="admin/admins/users" aria-expanded="false">
 						<div class="menu-icon">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M18.634 13.4211C18.634 16.7009 16.7007 18.6342 13.4209 18.6342H6.28738C2.99929 18.6342 1.06238 16.7009 1.06238 13.4211V6.27109C1.06238 2.99584 2.26688 1.06259 5.54763 1.06259H7.38096C8.03913 1.06351 8.65879 1.37242 9.05296 1.89951L9.88988 3.01234C10.2859 3.53851 10.9055 3.84834 11.5637 3.84926H14.1579C17.446 3.84926 18.6596 5.52309 18.6596 8.86984L18.634 13.4211Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
 								<path d="M5.85754 12.2577H13.8646" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
-							<span class="nav-text">Customers</span>
+							<span class="nav-text">Users</span>
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="uc-select2.html">Customer List</a></li>
@@ -320,7 +320,7 @@
 							<li><a href="uc-sweetalert.html">Loyalty Points</a></li>
 						</ul>
 					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+					<li><a class="has-arrow " href="{{ url('admin/admins/vendors') }}" aria-expanded="false">
 						<div class="menu-icon">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M18.634 13.4211C18.634 16.7009 16.7007 18.6342 13.4209 18.6342H6.28738C2.99929 18.6342 1.06238 16.7009 1.06238 13.4211V6.27109C1.06238 2.99584 2.26688 1.06259 5.54763 1.06259H7.38096C8.03913 1.06351 8.65879 1.37242 9.05296 1.89951L9.88988 3.01234C10.2859 3.53851 10.9055 3.84834 11.5637 3.84926H14.1579C17.446 3.84926 18.6596 5.52309 18.6596 8.86984L18.634 13.4211Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
@@ -336,7 +336,7 @@
 							<li><a href="uc-sweetalert.html">Withdrawal Methods</a></li>
 						</ul>
 					</li>
-					<li><a href="widget-basic.html" class="" aria-expanded="false">
+					<li><a href="{{ url('admin/admins/subscribers') }}" class="" aria-expanded="false">
 						<div class="menu-icon">
 							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 5.95833C2.75 3.55189 2.77577 2.75 5.95833 2.75C9.1409 2.75 9.16667 3.55189 9.16667 5.95833C9.16667 8.36478 9.17682 9.16667 5.95833 9.16667C2.73985 9.16667 2.75 8.36478 2.75 5.95833Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>

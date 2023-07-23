@@ -258,6 +258,17 @@ class AdminController extends Controller
 
     }
 
+    public function admins($type=null)
+    {
+        $admins = Admin::query();
+        if(!empty($type)){
+            $admins = $admins->where('type', $type);
+        }
+        $admins = $admins->get()->toArray();
+        // dd($admins);
+        return view('admin.admins.index', compact('admins'));
+    }
+
     public function register()
     {
         return view('admin.register');
@@ -270,8 +281,4 @@ class AdminController extends Controller
         return redirect('admin/login');
     }
 
-    public function my_shop()
-    {
-        return view('template.shop');
-    }
 }

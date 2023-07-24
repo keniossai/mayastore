@@ -70,7 +70,7 @@
                                                 <td><span class="text-primary">{{ $admin['id'] }}</span></td>
                                                 <td class="sorting_1">
                                                     <div class="products">
-                                                        <img src="images/contacts/pic3.jpg" class="avatar avatar-md" alt="">
+                                                        <img src="{{ asset("storage/images/".Auth::guard('admin')->user()->photo) }}" class="avatar avatar-md" alt="">
                                                     </div>
                                                 </td>
                                                 <td><span class="text-primary">{{ $admin['name'] }}</span></td>
@@ -84,7 +84,11 @@
                                                     <span>{{ $admin['email'] }}</span>
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-danger light border-0">{{ $admin['status'] }}</span>
+                                                    @if($admin['status']==1)
+                                                    <span class="badge badge-sucess bg-success light border-0">Active</span>
+                                                    @else
+                                                    <span class="badge badge-danger light border-0">Inactive</span>
+                                                    @endif
                                                 </td>
                                                 <td>
 													<div class="dropdown">

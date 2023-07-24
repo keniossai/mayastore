@@ -203,6 +203,7 @@ class AdminController extends Controller
                         Image::make($image_tmp)->save($imagePath);
                     }
                 }
+                
                 // Update in vendors_business_table
                 VendorsBusinessDetail::where('vendor_id',Auth::guard('admin')->user()->vendor_id)->update(
                     [

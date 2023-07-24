@@ -61,7 +61,10 @@
                                                     aria-label="Location: activate to sort column ascending">Status</th>
                                                 <th class="sorting" tabindex="0" aria-controls="reports-tbl"
                                                     rowspan="1" colspan="1"
-                                                    aria-label="Location: activate to sort column ascending">Verified</th>
+                                                    aria-label="Location: activate to sort column ascending">isVerified</th>
+                                                <th class="sorting" tabindex="0" aria-controls="reports-tbl"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Status: activate to sort column ascending">Approve/Reject</th>
                                                 <th class="sorting" tabindex="0" aria-controls="reports-tbl"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending">Action</th>
@@ -94,6 +97,9 @@
                                                     @endif
                                                 </td>
                                                 <td>
+                                                    <img src="{{ asset('admin/icons/verified.svg') }}" width="35" alt="">
+                                                </td>
+                                                <td>
                                                     <input type="checkbox" checked data-toggle="toggle" >
                                                 </td>
 
@@ -107,6 +113,7 @@
 															</svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-right" style="">
+															<a class="dropdown-item" href="javascript:void(0);">View</a>
 															<a class="dropdown-item" href="javascript:void(0);">Edit</a>
 															<a class="dropdown-item" href="javascript:void(0);">Delete</a>
 														</div>

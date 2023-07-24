@@ -81,7 +81,7 @@
     padding-bottom: 0;
     height: 100%;
     width: 0;
-    border-width: 0 1px;
+    border-width: 0 2px;
     background-color: #fff;
     border-radius: 50px;
 }
@@ -123,7 +123,7 @@
 }
 .toggle.btn {
     min-width: 2.9rem;
-    min-height: 1.20rem;
+    min-height: 1.80rem;
     border-radius: 50px;
 }
 .toggle-on.btn {

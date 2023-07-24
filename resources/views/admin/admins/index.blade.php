@@ -88,11 +88,15 @@
                                                 </td>
                                                 <td>
                                                     @if($admin['status']==1)
-                                                    <span class="badge badge-sucess bg-success light border-0">Active</span>
+                                                    <span class="badge badge-success light border-0">Active</span>
                                                     @else
                                                     <span class="badge badge-danger light border-0">Inactive</span>
                                                     @endif
                                                 </td>
+                                                <td>
+                                                    <input type="checkbox" checked data-toggle="toggle" >
+                                                </td>
+
                                                 <td>
 													<div class="dropdown">
 														<div class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">

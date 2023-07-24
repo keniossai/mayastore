@@ -113,7 +113,9 @@
 															</svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-right" style="">
-															<a class="dropdown-item" href="javascript:void(0);">View</a>
+															@if ($admin['type']=='vendor')
+                                                            <a class="dropdown-item" href="{{ url('admin/vendor-profile/'.$admin['id']) }}">View</a>
+                                                            @endif
 															<a class="dropdown-item" href="javascript:void(0);">Edit</a>
 															<a class="dropdown-item" href="javascript:void(0);">Delete</a>
 														</div>

@@ -61,6 +61,9 @@
                                                     aria-label="Location: activate to sort column ascending">Status</th>
                                                 <th class="sorting" tabindex="0" aria-controls="reports-tbl"
                                                     rowspan="1" colspan="1"
+                                                    aria-label="Location: activate to sort column ascending">Verified</th>
+                                                <th class="sorting" tabindex="0" aria-controls="reports-tbl"
+                                                    rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending">Action</th>
                                             </tr>
                                         </thead>

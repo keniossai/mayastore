@@ -199,7 +199,7 @@ class AdminController extends Controller
                         $extension = $image_tmp->getClientOriginalExtension();
                         // Generate New Image Name
                         $imageName = rand(111,99999).'.'.$extension;
-                        $imagePath = 'storage/images/proofs'.$imageName;
+                        $imagePath = 'storage/images/proof/'.$imageName;
                         // Upload Image
                         Image::make($image_tmp)->save($imagePath);
                     }
@@ -223,7 +223,7 @@ class AdminController extends Controller
                         'legal_rep'=>$data['legal_rep'],
                         'legal_address'=>$data['legal_address'],
                         'license_id'=>$data['license_id'],
-                        'license_proof'=>$data['license_proof'],
+                        'license_proof'=>$imageName,
                         'manager_name'=>$data['manager_name'],
                         'manager_phone'=>$data['manager_phone'],
                     ]);

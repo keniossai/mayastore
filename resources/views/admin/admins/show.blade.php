@@ -29,7 +29,8 @@
                             </div>
                         </div>
                         <div>
-                            Approve <input type="checkbox" checked data-toggle="toggle" >
+                            <a href="javascript:void(0)" class="btn btn-success btn-sm me-2">Approve Vendor</a>
+                            <a href="{{ url('admin/admins') }}" class="btn btn-primary btn-sm ms-2">Go Back</a>
                         </div>
                     </div>
                 </div>

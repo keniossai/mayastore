@@ -38,6 +38,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Vendor Profile
         Route::match(['get', 'post'], 'vendor-profile/{slug}', 'AdminController@updateVendorDetails');
 
+        // view vendor detail
+        Route::get('view-vendor-profile/{id}', 'AdminController@viewVendorDetails');
+
         // View admins | Subadmins, Vendors, Users
         Route::get('admins/{type?}', 'AdminController@admins');
 

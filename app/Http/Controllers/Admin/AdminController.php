@@ -173,6 +173,7 @@ class AdminController extends Controller
                 return redirect()->back()->with('success','Vendor details updated successfully');
             }
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
         }else if($slug=="business"){
             // Vendor Business Details Update
             if($request->isMethod('post')){
@@ -203,7 +204,7 @@ class AdminController extends Controller
                         Image::make($image_tmp)->save($imagePath);
                     }
                 }
-                
+
                 // Update in vendors_business_table
                 VendorsBusinessDetail::where('vendor_id',Auth::guard('admin')->user()->vendor_id)->update(
                     [
@@ -230,6 +231,7 @@ class AdminController extends Controller
             }
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
             // dd($vendorDetails);
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
         }elseif($slug=="bank"){
             if($request->isMethod('post')){
                 $data = $request->all();
@@ -252,10 +254,12 @@ class AdminController extends Controller
                 return redirect()->back()->with('success','Bank details updated successfully');
             }
             $vendorDetails = VendorsBankDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
         }elseif($slug=="shop"){
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
         }
-        return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
+
 
     }
 
@@ -271,6 +275,14 @@ class AdminController extends Controller
         $admins = $admins->get()->toArray();
         // dd($admins);
         return view('admin.admins.index', compact('admins', 'title'));
+    }
+
+    public function viewVendorDetails($id)
+    {
+        $vendorDetails = Admin::with('vendorPersonal','vendorBusiness','vendorBank')->where('id', $id)->first();
+        $vendorDetails = json_decode(json_encode($vendorDetails), true);
+        // dd($vendorDetails);
+        return view('admin.admins.show', compact('vendorDetails'));
     }
 
     public function register()

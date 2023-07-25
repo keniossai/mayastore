@@ -154,7 +154,7 @@
     </div>
 </div>
 @elseif($slug=="business")
-@section('title', 'Vendor Profile | Bank')
+@section('title', 'Vendor Profile | Business')
 <div class="content-body">
     <div class="page-titles">
         <ol class="breadcrumb">

@@ -114,7 +114,7 @@
 														</div>
 														<div class="dropdown-menu dropdown-menu-right" style="">
 															@if ($admin['type']=='vendor')
-                                                            <a class="dropdown-item" href="{{ url('admin/vendor-profile/'.$admin['id']) }}">View</a>
+                                                            <a class="dropdown-item" href="{{ url('admin/view-vendor-profile/'.$admin['id']) }}">View</a>
                                                             @endif
 															<a class="dropdown-item" href="javascript:void(0);">Edit</a>
 															<a class="dropdown-item" href="javascript:void(0);">Delete</a>

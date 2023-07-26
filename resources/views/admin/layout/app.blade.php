@@ -238,7 +238,16 @@
             }
         })
     })
+
+    // Update Status Data
+
+    $(document).on("click",".updateStatus",function(){
+        var status = $(this).children(".handle").attr("status");
+        
+    })
 })
+
+
 
 </script>
 </body>

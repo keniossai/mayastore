@@ -58,7 +58,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Phone Number</label>
-                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" id="mobile" value="{{ $vendorDetails['vendor_personal']['email'] }}" class="form-control" disabled maxlength="11" minlength="11">
+                                                            <input type="phone" placeholder="Enter a digit "  name="mobile" id="mobile" value="{{ $vendorDetails['vendor_personal']['mobile'] }}" class="form-control" disabled maxlength="11" minlength="11">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Email</label>
@@ -66,23 +66,23 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Country</label>
-                                                            <input type="country"  name="country" value="{{ $vendorDetails['vendor_personal']['email'] }}" class="form-control" disabled>
+                                                            <input type="country"  name="country" value="{{ $vendorDetails['vendor_personal']['country'] }}" class="form-control" disabled>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Address</label>
-                                                            <input type="address"  name="address" value="{{ $vendorDetails['vendor_personal']['email'] }}" class="form-control" disabled>
+                                                            <input type="address"  name="address" value="{{ $vendorDetails['vendor_personal']['address'] }}" class="form-control" disabled>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">State</label>
-                                                            <input type="state"  name="state" value="{{ $vendorDetails['vendor_personal']['email'] }}" class="form-control" disabled>
+                                                            <input type="state"  name="state" value="{{ $vendorDetails['vendor_personal']['state'] }}" class="form-control" disabled>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">City</label>
-                                                            <input type="city"  name="city" value="{{ $vendorDetails['vendor_personal']['email'] }}"class="form-control" disabled>
+                                                            <input type="city"  name="city" value="{{ $vendorDetails['vendor_personal']['city'] }}"class="form-control" disabled>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Zip Code</label>
-                                                            <input type="text"  name="zipcode" value="{{ $vendorDetails['vendor_personal']['email'] }}" class="form-control" disabled>
+                                                            <input type="text"  name="zipcode" value="{{ $vendorDetails['vendor_personal']['zipcode'] }}" class="form-control" disabled>
                                                         </div>
                                                         <div class="mb-3 col-md-12">
                                                             <label class="form-label">Image</label>

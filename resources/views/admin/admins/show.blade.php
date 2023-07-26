@@ -100,6 +100,47 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Uploaded Documents</h4>
+                    </div>
+                    <div class="card-body pb-1">
+                        <div id="lightgallery" class="row">
+                            @if (!empty($vendorDetails['vendor_business']['means_id_proof']))
+                            <a href="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" data-exthumbimage="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" data-src="images/big/img1.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" alt="" style="width:100%;">
+                            </a>
+                            @endif
+
+                            <a href="images/big/img2.jpg" data-exthumbimage="images/big/img2.jpg" data-src="images/big/img2.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img2.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img3.jpg" data-exthumbimage="images/big/img3.jpg" data-src="images/big/img3.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img3.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img4.jpg" data-exthumbimage="images/big/img4.jpg" data-src="images/big/img4.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img4.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img5.jpg" data-exthumbimage="images/big/img5.jpg" data-src="images/big/img5.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img5.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img6.jpg" data-exthumbimage="images/big/img6.jpg" data-src="images/big/img6.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img6.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img7.jpg" data-exthumbimage="images/big/img7.jpg" data-src="images/big/img7.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img7.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img8.jpg" data-exthumbimage="images/big/img8.jpg" data-src="images/big/img8.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img8.jpg" alt="" style="width:100%;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+        </div> --}}
         <div class="row">
             <div class="col-xl-12">
                 <div class="card profile-card card-bx m-b30">
@@ -196,32 +237,44 @@
                         </div>
                 </div>
             </div>
-            <div class="col-xl-12">
+            <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header border-0">
-                        <h4 class="heading mb-0">Uploaded Documents</h4>
+                    <div class="card-header">
+                        <h4 class="card-title">Uploaded Documents</h4>
                     </div>
-                    <div class="card-body pt-0">
-                        <div class="row">
+                    <div class="card-body pb-1">
+                        <div id="lightgallery" class="row">
                             @if (!empty($vendorDetails['vendor_business']['means_id_proof']))
-                            <div class="col-md-3">
-                                <img src="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" alt="" class="" style="width: 100%">
-                            </div>
+                            <a href="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" data-exthumbimage="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" data-src="images/big/img1.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['means_id_proof']) }}" alt="" style="width:100%;">
+                            </a>
                             @endif
-                            <div class="col-md-3">
-                                <img src="{{ asset('storage/images/proof/'.$vendorDetails['vendor_business']['license_proof']) }}" alt="" class="" style="width: 100%">
-                            </div>
-                            <div class="col-md-3">
-                                <img src="{{ asset('admin/images/credit.png') }}" alt="" class="" style="width: 100%">
-                            </div>
-                            <div class="col-md-3">
-                                <img src="{{ asset('admin/images/credit.png') }}" alt="" class="" style="width: 100%">
-                            </div>
 
-
+                            <a href="{{ asset('admin/images/big/img2.jpg') }}" data-exthumbimage="{{ asset('admin/images/big/img2.jpg') }}" data-src="{{ asset('admin/images/big/img2.jpg') }}" class="col-lg-3 col-md-6 mb-4">
+                                <img src="{{ asset('admin/images/big/img2.jpg') }}" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img3.jpg" data-exthumbimage="images/big/img3.jpg" data-src="images/big/img3.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img3.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img4.jpg" data-exthumbimage="images/big/img4.jpg" data-src="images/big/img4.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img4.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img5.jpg" data-exthumbimage="images/big/img5.jpg" data-src="images/big/img5.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img5.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img6.jpg" data-exthumbimage="images/big/img6.jpg" data-src="images/big/img6.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img6.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img7.jpg" data-exthumbimage="images/big/img7.jpg" data-src="images/big/img7.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img7.jpg" alt="" style="width:100%;">
+                            </a>
+                            <a href="images/big/img8.jpg" data-exthumbimage="images/big/img8.jpg" data-src="images/big/img8.jpg" class="col-lg-3 col-md-6 mb-4">
+                                <img src="images/big/img8.jpg" alt="" style="width:100%;">
+                            </a>
                         </div>
                     </div>
                 </div>
+                <!-- /# card -->
             </div>
         </div>
         <div class="row">

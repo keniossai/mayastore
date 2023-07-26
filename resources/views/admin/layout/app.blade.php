@@ -22,6 +22,7 @@
 
 	<link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
 	<link href="{{ asset('admin/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/lightgallery/css/lightgallery.min.css') }}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css">
 	<link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
@@ -163,6 +164,7 @@
     <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.min.js')}}"></script>
     <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.world.js')}}"></script>
     <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.usa.js')}}"></script>
+    <script src="{{ asset('admin/vendor/lightgallery/js/lightgallery-all.min.js') }}"></script>
     <script src="{{ asset('admin/js/custom.js')}}"></script>
 	<script src="{{ asset('admin/js/deznav-init.js')}}"></script>
 	<script src="{{ asset('admin/js/demo.js')}}"></script>

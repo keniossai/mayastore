@@ -36,7 +36,7 @@
 	<!-- Style css -->
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/toastr.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/bootstrap4-toggle.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('admin/css/bootstrap4-toggle.min.css') }}" rel="stylesheet"> --}}
 
 
 </head>
@@ -172,7 +172,7 @@
     <script src="{{ asset('admin/js/toastr.js') }}"></script>
     <script src="{{ asset('js/request.js') }}"></script>
     <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
-    <script src="{{ asset('admin/js/bootstrap4-toggle.min.js') }}"></script>
+    {{-- <script src="{{ asset('admin/js/bootstrap4-toggle.min.js') }}"></script> --}}
 <script>
 
     // success message popup notification
@@ -239,6 +239,7 @@
         })
     })
 })
+
 </script>
 </body>
 

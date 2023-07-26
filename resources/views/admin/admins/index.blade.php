@@ -97,7 +97,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <img src="{{ asset('admin/icons/verified.svg') }}" width="35" alt="">
+                                                    <img src="{{ asset('admin/icons/verified.png') }}" width="35" alt="">
                                                 </td>
                                                 <td>
                                                     <input type="checkbox" checked data-toggle="toggle" >

@@ -44,6 +44,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // View admins | Subadmins, Vendors, Users
         Route::get('admins/{type?}', 'AdminController@admins');
 
+        Route::post('update-admin-status', 'AdminController@updateAdminStatus');
+
         // Admin Logout
         Route::get('logout', 'AdminController@logout');
 

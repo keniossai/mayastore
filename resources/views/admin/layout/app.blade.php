@@ -241,13 +241,25 @@
 
     // Update Status Data
 
-    $(document).on("click",".updateStatus",function(){
-        var status = $(this).children(".handle").attr("status");
-        
-    })
-})
-
-
+    $(document).on("click",".updateAdminStatus",function(){
+        var status = $(this).children("div").attr("status");
+        var admin_id = $(this).attr("admin_id");
+        alert(admin_id);
+        $.ajax({
+            headers:{
+                'X-CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'post',
+            url: '/admin/update-admin-status',
+            data: {status:status,admin_id:admin_id},
+            success:function(resp){
+                alert(resp);
+            },error:function(){
+                alert('Error');
+            }
+        })
+    });
+});
 
 </script>
 </body>

@@ -88,12 +88,12 @@
                                                 </td>
                                                 <td>
                                                     @if($admin['status']==1)
-                                                    <button type="button" class="btn btn-xs btn-secondary btn-toggle active updateStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" status="Active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                                                        <div class="handle"></div>
+                                                    <button type="button" class="btn btn-xs btn-secondary btn-toggle active updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" >
+                                                        <div class="handle" status="Active"></div>
                                                     </button>
                                                     @else
-                                                    <button type="button" class="btn btn-xs btn-toggle updateStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" status="Inactive"data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                        <div class="handle"></div>
+                                                    <button type="button" class="btn btn-xs btn-toggle updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
+                                                        <div class="handle" status="Inactive"></div>
                                                     </button>
                                                     @endif
                                                 </td>

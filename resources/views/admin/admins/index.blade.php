@@ -64,6 +64,9 @@
                                                     aria-label="Location: activate to sort column ascending">isVerified</th>
                                                 <th class="sorting" tabindex="0" aria-controls="reports-tbl"
                                                     rowspan="1" colspan="1"
+                                                    aria-label="Status: activate to sort column ascending">Approve/Reject</th>
+                                                <th class="sorting" tabindex="0" aria-controls="reports-tbl"
+                                                    rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending">Action</th>
                                             </tr>
                                         </thead>
@@ -144,6 +147,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 @endsection
 

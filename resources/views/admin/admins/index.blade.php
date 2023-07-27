@@ -91,13 +91,13 @@
                                                 </td>
                                                 <td>
                                                     @if($admin['status']==1)
-                                                    <button type="button" class="btn btn-xs btn-secondary btn-toggle active updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}" >
-                                                        <div class="handle" status="Active"></div>
-                                                    </button>
+                                                    <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
+                                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" status='Active'  checked>
+                                                    </div>
                                                     @else
-                                                    <button type="button" class="btn btn-xs btn-toggle updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
-                                                        <div class="handle" status="Inactive"></div>
-                                                    </button>
+                                                    <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
+                                                        <input class="form-check-input" type="checkbox" status='Inactive' id="flexSwitchCheckDefault">
+                                                    </div>
                                                     @endif
                                                 </td>
                                                 <td>
@@ -147,8 +147,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 @endsection

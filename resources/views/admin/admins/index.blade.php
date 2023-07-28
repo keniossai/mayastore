@@ -92,7 +92,7 @@
                                                 <td>
                                                     @if($admin['status']==1)
                                                     <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
-                                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" status='Active'  checked>
+                                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" status='Active'>
                                                     </div>
                                                     @else
                                                     <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">

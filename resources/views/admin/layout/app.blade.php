@@ -242,7 +242,7 @@
     // Update Status Data
 
     $(document).on("click",".updateAdminStatus",function(){
-        var status = $(this).children("div").attr("status");
+        var status = $(this).children("input").attr("status");
         var admin_id = $(this).attr("admin_id");
         // alert(admin_id);
         $.ajax({
@@ -255,9 +255,9 @@
             success:function(resp){
                 // alert(resp);
                 if(resp['status']==0){
-                    $("#admin-"+admin_id).html("<div class='handle' status='Active'></div>")
+                    $("#admin-"+admin_id).html("<input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' status='Active'>")
                 }else if(resp['status']==1){
-                    $("#admin-"+admin_id).html("<div class='handle' status='Inactive'></div>")
+                    $("#admin-"+admin_id).html("<input class='form-check-input' type='checkbox' status='Inactive' id='flexSwitchCheckDefault'>")
                 }
             },error:function(){
                 alert('Error');

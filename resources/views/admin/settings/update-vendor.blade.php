@@ -79,7 +79,11 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Country</label>
-                                                            <input type="country"  name="country" value="{{ $vendorDetails['country'] }}" class="form-control">
+                                                            <select name="country" id="country" class="form-control">
+                                                                @foreach ($countries as $country)
+                                                                    <option value="{{ $country['country_name'] }}" @if($country['country_name']==$vendorDetails['country']) selected @endif>{{ $country['country_name'] }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label">Address</label>
@@ -282,7 +286,11 @@
                                 </div>
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Country</label>
-                                    <input type="text" class="form-control" name="country" id="country" value="{{ $vendorDetails['country'] }}" placeholder="Somewhere in the world">
+                                    <select name="country" id="country" class="form-control">
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country['country_name'] }}" @if($country['country_name']==$vendorDetails['country']) selected @endif>{{ $country['country_name'] }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-sm-6 m-b30">
                                     <label class="form-label">Means of ID</label>

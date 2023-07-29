@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
 use App\Models\Vendor;
+use App\Models\Country;
 use Illuminate\Http\Request;
+use App\Models\VendorsBankDetail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\VendorsBusinessDetail;
-use App\Models\VendorsBankDetail;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
@@ -172,8 +173,9 @@ class AdminController extends Controller
                     ]);
                 return redirect()->back()->with('success','Vendor details updated successfully');
             }
+            $countries = Country::where('status',1)->get()->toArray();
             $vendorDetails = Vendor::where('id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
-            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails','countries'));
         }else if($slug=="business"){
             // Vendor Business Details Update
             if($request->isMethod('post')){
@@ -230,8 +232,8 @@ class AdminController extends Controller
                 return redirect()->back()->with('success','Business details updated successfully');
             }
             $vendorDetails = VendorsBusinessDetail::where('vendor_id', Auth::guard('admin')->user()->vendor_id)->first()->toArray();
-            // dd($vendorDetails);
-            return view('admin.settings.update-vendor', compact('slug','vendorDetails'));
+            $countries = Country::where('status',1)->get()->toArray();
+            return view('admin.settings.update-vendor', compact('slug','vendorDetails','countries'));
         }elseif($slug=="bank"){
             if($request->isMethod('post')){
                 $data = $request->all();
@@ -289,7 +291,6 @@ class AdminController extends Controller
     {
         if($request->ajax()){
             $data = $request->all();
-            // echo "<pre>"; print_r($data); die;
             if($data['status']=="Active"){
                 $status = 0;
             }else{

@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('title', '| Sections')
+@section('title', 'Admin | Sections')
 
 @section('content')
     <div class="content-body" style="min-height: 900px;">
@@ -88,8 +88,7 @@
 															</svg>
 														</div>
 														<div class="dropdown-menu dropdown-menu-right" style="">
-                                                            <a class="dropdown-item" href="{{ url('admin/view-vendor-profile/'.$section['id']) }}">View</a>
-															<a class="dropdown-item" href="javascript:void(0);">Edit</a>
+															<a class="dropdown-item" href="edit-section">Edit</a>
 															<a class="dropdown-item" href="javascript:void(0);">Delete</a>
 														</div>
 													</div>

@@ -73,7 +73,7 @@
                                                             <i class="fa fa-toggle-on" aria-hidden="true" status='Active'></i>
                                                         </a>
                                                     @else
-                                                        <a href="javaacript:void(0)" class="updateSectionStatus" id="admin-{{ $section['id'] }}" sectio_idn="{{ $section['id'] }}">
+                                                        <a href="javaacript:void(0)" class="updateSectionStatus" id="section-{{ $section['id'] }}" section_id="{{ $section['id'] }}">
                                                             <i class="fa fa-toggle-off" aria-hidden="true" status='Inactive'></i>
                                                         </a>
                                                     @endif
@@ -126,11 +126,11 @@
   color: rgb(19, 157, 95);
 }
 
-.updateAdminStatus i{
+.updateSectionStatus i{
     font-size: 20px;
     transition: all .3s ease;
 }
-.updateAdminStatus i::before{
+.updateSectionStatus i::before{
     transition: all .3s ease;
 }
 

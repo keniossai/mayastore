@@ -10,7 +10,7 @@ class SectionController extends Controller
 {
     public function index(){
         $sections = Section::get()->toArray();
-        dd($sections);
-        return view('admin.section.index');
+        // dd($sections);
+        return view('admin.sections.index', compact('sections'));
     }
 }

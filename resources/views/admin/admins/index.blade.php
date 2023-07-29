@@ -114,7 +114,7 @@
                                                             <a class="dropdown-item" href="{{ url('admin/view-vendor-profile/'.$admin['id']) }}">View</a>
                                                             @endif
 															<a class="dropdown-item" href="javascript:void(0);">Edit</a>
-															<a class="dropdown-item" href="javascript:void(0);">Delete</a>
+															<a class="dropdown-item bg-danger" href="javascript:void(0);">Delete</a>
 														</div>
 													</div>
 												</td>

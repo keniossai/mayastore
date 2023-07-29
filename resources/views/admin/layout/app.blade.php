@@ -36,6 +36,7 @@
 	<!-- Style css -->
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/toastr.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('admin/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet"> --}}
     {{-- <link href="{{ asset('admin/css/bootstrap4-toggle.min.css') }}" rel="stylesheet"> --}}
 
 

@@ -161,9 +161,6 @@
 
 
 	<!-- Vectormap -->
-    <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.min.js')}}"></script>
-    <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.world.js')}}"></script>
-    <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.usa.js')}}"></script>
     <script src="{{ asset('admin/vendor/lightgallery/js/lightgallery-all.min.js') }}"></script>
     <script src="{{ asset('admin/js/custom.js')}}"></script>
 	<script src="{{ asset('admin/js/deznav-init.js')}}"></script>
@@ -242,7 +239,7 @@
     // Update Status Data
 
     $(document).on("click",".updateAdminStatus",function(){
-        var status = $(this).children("input").attr("status");
+        var status = $(this).children("i").attr("status");
         var admin_id = $(this).attr("admin_id");
         // alert(admin_id);
         $.ajax({
@@ -255,9 +252,9 @@
             success:function(resp){
                 // alert(resp);
                 if(resp['status']==0){
-                    $("#admin-"+admin_id).html("<input class='form-check-input' type='checkbox' id='flexSwitchCheckChecked' status='Active'>")
+                    $("#admin-"+admin_id).html("<i class='fa fa-toggle-off' aria-hidden='true' status='Inactive'></i>")
                 }else if(resp['status']==1){
-                    $("#admin-"+admin_id).html("<input class='form-check-input' type='checkbox' status='Inactive' id='flexSwitchCheckDefault'>")
+                    $("#admin-"+admin_id).html("<i class='fa fa-toggle-on' aria-hidden='true' status='Active'></i>")
                 }
             },error:function(){
                 alert('Error');

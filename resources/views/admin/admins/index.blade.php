@@ -91,19 +91,18 @@
                                                 </td>
                                                 <td>
                                                     @if($admin['status']==1)
-                                                    <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
-                                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" status='Active'>
-                                                    </div>
+                                                        <a href="javascript:void(0)" class="updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
+                                                            <i class="fa fa-toggle-on" aria-hidden="true" status='Active'></i>
+                                                        </a>
                                                     @else
-                                                    <div class="form-check form-switch form-switch-sm updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
-                                                        <input class="form-check-input" type="checkbox" status='Inactive' id="flexSwitchCheckDefault">
-                                                    </div>
+                                                        <a href="javaacript:void(0)" class="updateAdminStatus" id="admin-{{ $admin['id'] }}" admin_id="{{ $admin['id'] }}">
+                                                            <i class="fa fa-toggle-off" aria-hidden="true" status='Inactive'></i>
+                                                        </a>
                                                     @endif
                                                 </td>
                                                 <td>
                                                     <img src="{{ asset('admin/icons/verified.png') }}" width="35" alt="">
                                                 </td>
-
                                                 <td>
 													<div class="dropdown">
 														<div class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -148,6 +147,20 @@
         </div>
     </div>
 
+<style>
 
+.fa-toggle-on {
+  color: rgb(19, 157, 95);
+}
+
+.updateAdminStatus i{
+    font-size: 20px;
+    transition: all .3s ease;
+}
+.updateAdminStatus i::before{
+    transition: all .3s ease;
+}
+
+</style>
 @endsection
 

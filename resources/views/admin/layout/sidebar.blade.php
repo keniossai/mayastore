@@ -85,12 +85,13 @@
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.2952 1.83333H6.70474C3.7103 1.83333 1.83331 3.95274 1.83331 6.95306V15.0469C1.83331 18.0473 3.70157 20.1667 6.70474 20.1667H15.2952C18.2984 20.1667 20.1666 18.0473 20.1666 15.0469V6.95306C20.1666 3.95274 18.2984 1.83333 15.2952 1.83333Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
-						<span class="nav-text">Category Setup</span>
+						<span class="nav-text">Catalogue Setup</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="chat.html">Categories</a></li>
-							<li><a href="chat.html">Sub Categories</a></li>
-							<li><a href="chat.html">Sub Sub Categories</a></li>
+							<li><a href="sections">Sections</a></li>
+							<li><a href="admin/categories">Categories</a></li>
+							<li><a href="">Sub Categories</a></li>
+							<li><a href="">Sub Sub Categories</a></li>
 						</ul>
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">

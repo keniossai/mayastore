@@ -170,6 +170,7 @@
     <script src="{{ asset('admin/js/toastr.js') }}"></script>
     <script src="{{ asset('js/request.js') }}"></script>
     <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- <script src="{{ asset('admin/js/bootstrap4-toggle.min.js') }}"></script> --}}
 <script>
 
@@ -285,6 +286,35 @@
             }
         })
     });
+
+    // $(".confirmDelete").click(function(){
+    //     var title = $(this).attr("title");
+    //     if(confirm("Are you sure you want to delete this "+title+" ?")){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // })
+    $(".confirmDelete").click(function(){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+                window.location
+            }
+        })
+    })
 });
 
 </script>

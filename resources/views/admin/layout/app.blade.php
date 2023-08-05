@@ -296,6 +296,8 @@
     //     }
     // })
     $(".confirmDelete").click(function(){
+        var module = $(this).attr('module');
+        var moduleid = $(this).attr('moduleid');
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -311,7 +313,7 @@
                 'Your file has been deleted.',
                 'success'
                 )
-                window.location
+                window.location = "/admin/delete-"+module+"/"+moduleid;
             }
         })
     })

@@ -72,10 +72,7 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
-                                                    <form action="{{ url('admin/delete-section/'.$section['id']) }}" method="GET">
-                                                        @method('DELETE')
-                                                        <button type="submit" title="section" class="btn btn-danger shadow btn-xs sharp confirmDelete"><i class="fa fa-trash"></i></button>
-                                                    </form>
+                                                    <a href="javascript:void()" module="section" moduleid="{{ $section['id'] }}" class="btn btn-danger shadow btn-xs sharp confirmDelete"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

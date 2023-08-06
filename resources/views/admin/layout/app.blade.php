@@ -308,11 +308,6 @@
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                )
                 window.location = "/admin/delete-"+module+"/"+moduleid;
             }
         })

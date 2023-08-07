@@ -86,7 +86,7 @@
                                                             <input style="height: 40px;" type="file" name="photo" id="photo" class="form-control" />
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                                    <button class="btn btn-secondary btn-sm" type="submit">Save Changes</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -123,7 +123,7 @@
                                                     <div class="mb-3 col-md-12">
                                                         <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" class="form-control">
                                                     </div>
-                                                    <button class="btn btn-primary" type="submit">Save Password <x-spinner /> </button>
+                                                    <button class="btn btn-secondary btn-sm" type="submit">Save Password <x-spinner /> </button>
                                                 </form>
                                             </div>
                                         </div>

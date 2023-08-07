@@ -134,6 +134,8 @@
     <!--**********************************
         Main wrapper end
     ***********************************-->
+        <x-section />
+
 
     <!--**********************************
         Scripts
@@ -312,6 +314,17 @@
             }
         })
     })
+
+    $('#updateModal').on('show.bs.modal', function (event) {
+
+    var button = $(event.relatedTarget)
+    var name = button.data('section')
+    var id = button.data('id')
+    var modal = $(this)
+
+    modal.find('.modal-body #name').val(name);
+    modal.find('.modal-body #section-id').val(id);
+    });
 });
 
 </script>

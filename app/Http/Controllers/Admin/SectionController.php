@@ -33,6 +33,60 @@ class SectionController extends Controller
         Section::where('id', $id)->delete();
         return back()->with('success','Section deleted successfully');
     }
+
+    // Add Section
+    public function addSection(Request $request)
+    {
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            $data = new Section;
+            $data->name = $request->name;
+            $data->status = 1;
+            $data->save();
+            return redirect()->back()->with('success','Section added successfully');
+        }
+    }
+    public function updateSection(Request $request)
+    {
+        if($request->isMethod('patch')){
+
+            $data = $request->all();
+            //dd($data);
+
+            $data = Section::find($request->id);
+            $data->name = $request->name;
+            $data->status = 1;
+            $data->update();
+            return redirect()->back()->with('success','Section updated successfully');
+        }
+        // $section = Section::find($request->$id);
+        // $section->update($request->all());
+        // return redirect()->back()->with('success','Section updated successfully');
+
+    }
+
+
+
+    // public function modifySection(Request $request, $id=null)
+    // {
+    //     if($id = ""){
+    //         $title = "Add Section";
+    //         $section = new Section;
+    //     }else{
+    //         $title = "Edit Section";
+    //         $section = Section::find($id);
+    //     }
+    //     if($request->isMethod('post')){
+    //         $data = $request->all();
+
+    //         $section->name = $data['name'];
+    //         $section->status = 1;
+    //         $section->save();
+
+    //         return redirect()->back()->with('success','Section added successfully');
+    //     }
+    // }
 }
 
 

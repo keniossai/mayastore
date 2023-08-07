@@ -55,8 +55,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('add-section', 'SectionController@addSection');
         Route::patch('update-section/{id?}', 'SectionController@updateSection');
 
-        // Route::match(['get', 'post'], '/add-section/{id?}', 'SectionController@modifySection');
-
+        // category Route
+        Route::get('/categories', 'CategoryController@index');
         // Admin Logout
         Route::get('logout', 'AdminController@logout');
 

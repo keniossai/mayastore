@@ -54,6 +54,18 @@
 
 */
 
+.fa-toggle-on {
+    color: rgb(19, 157, 95);
+}
+
+.updateSectionStatus i {
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.updateSectionStatus i::before {
+    transition: all .3s ease;
+}
 
 
 
@@ -31851,7 +31863,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .photo-content {
   position: relative; }
   .photo-content .cover-photo {
-    background: url(../images/profile/12.jpg);
+    background: url(../images/profile/gradient.png);
     background-size: cover;
     background-position: center;
     min-height: 15.625rem;

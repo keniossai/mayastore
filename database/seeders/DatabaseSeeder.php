@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // $this->call(AdminTableSeeder::class);
-        $this->call(SectionsTableSeeder::class);
+        // $this->call(SectionsTableSeeder::class);
         // $this->call(VendorsTableSeeder::class);
         // $this->call(VendorsBusinessDetailsTableSeeder::class);
         // $this->call(VendorsBankDetailsTableSeeder::class);
+        $this->call(CategoryTableSeeder::class);
     }
 }

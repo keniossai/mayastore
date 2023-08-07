@@ -89,7 +89,7 @@
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="sections">Sections</a></li>
-							<li><a href="admin/categories">Categories</a></li>
+							<li><a href="categories">Categories</a></li>
 							<li><a href="">Sub Categories</a></li>
 							<li><a href="">Sub Sub Categories</a></li>
 						</ul>

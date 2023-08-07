@@ -171,7 +171,18 @@
     @endif
 
     <style>
-       
+       .fa-toggle-on {
+        color: rgb(19, 157, 95);
+        }
+
+        .updateSectionStatus i {
+            font-size: 20px;
+            transition: all .3s ease;
+        }
+
+        .updateSectionStatus i::before {
+            transition: all .3s ease;
+        }
     </style>
 
 

@@ -57,6 +57,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         // category Route
         Route::get('/categories', 'CategoryController@index');
+        Route::get('delete-category/{id}', 'CategoryController@destroy');
         // Admin Logout
         Route::get('logout', 'AdminController@logout');
 

@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::with(['section', 'parentcategory'])->get()->toArray();
-        dd($categories);
+        // dd($categories);
         return view('admin.category.index', compact('categories'));
     }
 

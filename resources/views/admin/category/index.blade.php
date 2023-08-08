@@ -67,9 +67,6 @@
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1"><span>{{$category['id']}}</span></td>
                                                     <td>
-                                                        <img src="images/contacts/pic2.jpg" class="avatar avatar-md" alt="">
-                                                    </td>
-                                                    <td>
                                                         <div>
                                                             <h6>{{ $category['category_name'] }}</h6>
                                                         </div>

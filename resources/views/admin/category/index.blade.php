@@ -8,9 +8,9 @@
         <div class="page-titles">
             <ol class="breadcrumb">
                 <li>
-                    <h5 class="bc-title">Sections</h5>
+                    <h5 class="bc-title">Categories</h5>
                 </li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">
+                <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -30,7 +30,7 @@
                         <div class="card-body p-0">
                             <div class="table-responsive active-projects style-1">
                                 <div class="tbl-caption">
-                                    <h4 class="heading mb-0">Category</h4>
+                                    <h4 class="heading mb-0">Categories</h4>
                                     <div>
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal1">

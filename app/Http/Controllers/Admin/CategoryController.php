@@ -63,6 +63,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Category::where('id', $id)->delete();
+        return back()->with('success','Section deleted successfully');
     }
 }

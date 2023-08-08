@@ -28,12 +28,6 @@ class SectionController extends Controller
         }
     }
 
-    public function deleteSection($id)
-    {
-        Section::where('id', $id)->delete();
-        return back()->with('success','Section deleted successfully');
-    }
-
     // Add Section
     public function addSection(Request $request)
     {
@@ -60,33 +54,18 @@ class SectionController extends Controller
             $data->update();
             return redirect()->back()->with('success','Section updated successfully');
         }
-        // $section = Section::find($request->$id);
-        // $section->update($request->all());
-        // return redirect()->back()->with('success','Section updated successfully');
 
+    }
+
+    public function deleteSection($id)
+    {
+        Section::where('id', $id)->delete();
+        return back()->with('success','Section deleted successfully');
     }
 
 
 
-    // public function modifySection(Request $request, $id=null)
-    // {
-    //     if($id = ""){
-    //         $title = "Add Section";
-    //         $section = new Section;
-    //     }else{
-    //         $title = "Edit Section";
-    //         $section = Section::find($id);
-    //     }
-    //     if($request->isMethod('post')){
-    //         $data = $request->all();
 
-    //         $section->name = $data['name'];
-    //         $section->status = 1;
-    //         $section->save();
-
-    //         return redirect()->back()->with('success','Section added successfully');
-    //     }
-    // }
 }
 
 

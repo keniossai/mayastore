@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -23,15 +24,7 @@ class CategoryController extends Controller
      */
     public function create(Request $request)
     {
-        if($request->isMethod('post')){
-            $data = $request->all();
-
-            $data = new Category;
-            $data->name = $request->name;
-            $data->status = 1;
-            $data->save();
-            return redirect()->back()->with('success','Section added successfully');
-        }
+        //
     }
 
     /**
@@ -39,7 +32,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            $data = new Category;
+            $data->category_name = $request->category_name;
+            $data->status = 1;
+            $data->save();
+
+            
+            return redirect()->back()->with('success','Category added successfully');
+        }
     }
 
     /**

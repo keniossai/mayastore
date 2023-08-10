@@ -33,7 +33,7 @@
                                     <h4 class="heading mb-0">Categories</h4>
                                     <div>
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal1">
+                                            data-bs-target="#categoryModal1">
                                             + Add Category
                                         </button>
                                     </div>

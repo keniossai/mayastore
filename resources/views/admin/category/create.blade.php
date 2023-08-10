@@ -71,9 +71,7 @@
                                     <input type="text" name="meta_keywords" id="meta_keywords" class="form-control" placeholder="Enter Meta Keywords">
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-secondary btn-sm" >Save Changes</button>
-                            </div>
+                            <button class="btn btn-secondary btn-sm" type="submit">Save Changes</button>
                         </form>
                     </div>
                 </div>

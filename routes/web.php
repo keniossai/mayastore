@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('/categories', 'CategoryController@index');
         Route::post('update-category-status', 'CategoryController@updateCategoryStatus');
         Route::post('/add-category', 'CategoryController@store');
+        Route::match(['get', 'post'], 'create-category', 'CategoryController@create');
         Route::patch('/update-category{id?}', 'CategoryController@store');
         Route::get('delete-category/{id}', 'CategoryController@destroy');
 

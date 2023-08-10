@@ -50,7 +50,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('sections', 'SectionController@index');
         Route::post('update-section-status', 'SectionController@updateSectionStatus');
         Route::get('delete-section/{id}', 'SectionController@deleteSection');
-
         // Add section
         Route::post('add-section', 'SectionController@addSection');
         Route::patch('update-section/{id?}', 'SectionController@updateSection');
@@ -58,7 +57,11 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // category Route
         Route::get('/categories', 'CategoryController@index');
         Route::post('update-category-status', 'CategoryController@updateCategoryStatus');
+        Route::post('/add-category', 'CategoryController@store');
+        Route::patch('/update-category{id?}', 'CategoryController@store');
         Route::get('delete-category/{id}', 'CategoryController@destroy');
+
+
         // Admin Logout
         Route::get('logout', 'AdminController@logout');
 

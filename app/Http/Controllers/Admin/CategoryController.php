@@ -21,9 +21,17 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            $data = new Category;
+            $data->name = $request->name;
+            $data->status = 1;
+            $data->save();
+            return redirect()->back()->with('success','Section added successfully');
+        }
     }
 
     /**
@@ -40,6 +48,20 @@ class CategoryController extends Controller
     public function show(string $id)
     {
         //
+    }
+
+    public function updateCategoryStatus(Request $request)
+    {
+        if($request->ajax()){
+            $data = $request->all();
+            if($data['status']=="Active"){
+                $status = 0;
+            }else{
+                $status = 1;
+            }
+            Category::where('id', $data['category_id'])->update(['status'=>$status]);
+            return response()->json(['status'=>$status, 'category_id'=>$data['category_id']]);
+        }
     }
 
     /**

@@ -32,10 +32,9 @@
                                 <div class="tbl-caption">
                                     <h4 class="heading mb-0">Categories</h4>
                                     <div>
-                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#categoryModal1">
+                                        <a href="{{ url('admin/create-category') }}" class="btn btn-secondary btn-sm" >
                                             + Add Category
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div id="empoloyees-tblwrapper_wrapper" class="dataTables_wrapper no-footer">

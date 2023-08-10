@@ -50,7 +50,19 @@
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Employee Name: activate to sort column ascending"
-                                                    style="width: 186.516px;">Category Name</th>
+                                                    style="width: 186.516px;">Category</th>
+                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Employee Name: activate to sort column ascending"
+                                                    style="width: 186.516px;">Parent Category</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Employee Name: activate to sort column ascending"
+                                                    style="width: 186.516px;">Section</th>
+                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Employee Name: activate to sort column ascending"
+                                                    style="width: 186.516px;">Category URL</th>
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Department: activate to sort column ascending"
@@ -64,11 +76,31 @@
                                         </thead>
                                         <tbody>
                                             @forelse ($categories as $category)
+                                            @if (isset($category['parentcategory']['category_name'])&&!empty($category['parentcategory']['category_name']))
+                                                <?php $parent_category = $category['parentcategory']['category_name']; ?>
+                                            @else
+                                                <?php $parent_category = "Root"; ?>
+                                            @endif
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1"><span>{{$category['id']}}</span></td>
                                                     <td>
                                                         <div>
                                                             <h6>{{ $category['category_name'] }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <h6>{{ $parent_category }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <h6>{{ $category['section']['name'] }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <p>{{ $category['url'] }}</p>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -168,12 +200,12 @@
         color: rgb(19, 157, 95);
         }
 
-        .updateSectionStatus i {
+        .updateCategoryStatus i {
             font-size: 20px;
             transition: all .3s ease;
         }
 
-        .updateSectionStatus i::before {
+        .updateCategoryStatus i::before {
             transition: all .3s ease;
         }
     </style>

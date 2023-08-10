@@ -1,5 +1,5 @@
 <div class="modal fade" id="categoryModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-center">
+    <div class="modal-dialog modal-dialog-center modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel1">Add Category</h1>

@@ -120,9 +120,9 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <button data-id="{{ $category['id'] }}" data-category="{{ $category['category_name'] }}" data-bs-toggle="modal" data-bs-target="#updateModal"
+                                                        <a href="{{ url('admin/edit-category',$category['id']) }}"
                                                             class="btn btn-primary shadow btn-xs sharp me-1">
-                                                            <i class="fa fa-pencil"></i></button>
+                                                            <i class="fa fa-pencil"></i></a>
                                                         <a href="javascript:void()" module="category"
                                                             moduleid="{{ $category['id'] }}"
                                                             class="btn btn-danger shadow btn-xs sharp confirmDelete"><i

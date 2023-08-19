@@ -24,15 +24,16 @@
                         <h4 class="card-title">Create Category</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{ url('admin/add-category') }}" method="post">
+                            @csrf
                             <div class="row form-material">
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Name<span class="text-danger">*</span></label>
-                                    <input type="text" name="name" id="" class="form-control" placeholder="Enter Category name">
+                                    <input type="text" name="category_name" id="" class="form-control" placeholder="Enter Category name">
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Section<span class="text-danger">*</span></label>
-                                    <select class="form-control" class="" name="" id="">
+                                    <select class="form-control" class="" name="section_id" id="section_id">
                                         <?php $getSections = App\Models\Section::get()->toArray(); ?>
                                         <option value="">Select</option>
                                         @foreach ($getSections as $section)
@@ -46,27 +47,31 @@
                                         <option value="0">Main Category</option>
                                     </select>
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6">
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                    <label class="form-label">Category Discount<span class="text-danger">*</span></label>
+                                    <input type="text" name="category_discount" id="category_discount" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Image<span class="text-danger">*</span></label>
                                     <input type="file" name="category_image" id="" class="form-control">
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="form-label">Category Description<span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6">
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category URL<span class="text-danger">*</span></label>
                                     <input type="text" name="url" id="url" class="form-control" placeholder="Enter URL">
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6">
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Meta Title<span class="text-danger">*</span></label>
                                     <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Enter Meta Title">
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6">
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Meta Description<span class="text-danger">*</span></label>
                                     <input type="text" name="meta_description" id="meta_description" class="form-control" placeholder="Enter Meta Description">
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6">
+                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Meta Keywords<span class="text-danger">*</span></label>
                                     <input type="text" name="meta_keywords" id="meta_keywords" class="form-control" placeholder="Enter Meta Keywords">
                                 </div>

@@ -58,9 +58,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // category Route
         Route::get('/categories', 'CategoryController@index');
         Route::post('update-category-status', 'CategoryController@updateCategoryStatus');
+        Route::get('create-category', 'CategoryController@create');
         Route::post('/add-category', 'CategoryController@store');
-        Route::match(['get', 'post'], 'create-category', 'CategoryController@create');
-        Route::patch('/update-category{id?}', 'CategoryController@store');
+        Route::get('edit-category/{id?}', 'CategoryController@edit');
+        // Route::patch('/update-category{id?}', 'CategoryController@store');
         Route::get('delete-category/{id}', 'CategoryController@destroy');
 
 

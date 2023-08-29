@@ -31,73 +31,23 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function storeEditCategory(Request $request, $id=null)
-    // {
-    //     if($id=""){
-    //         // Add category functionality
-    //         $title = "Add Category";
-    //         $category = New Category;
-    //         // $message('success','Category added successfully');
-    //     }else{
-    //         $title = "Edit Category";
-    //         $category = Category::find($id);
-    //         // $message('success','Category added successfully');
-    //     }
 
-    //     if($request->isMethod('post')){
-    //         $data = $request->all();
-    //         // dd($request->all());
+    // Add Category function
 
-    //         if($request->hasFile('category_image')){
-    //             $image_tmp = $request->file('category_image');
-    //             if($image_tmp->isValid()){
-    //                 // Get Image Extension
-    //                 $extension = $image_tmp->getClientOriginalExtension();
-    //                 // Generate New Image Name
-    //                 $imageName = rand(111,99999).'.'.$extension;
-    //                 $imagePath = 'storage/images/category'.$imageName;
-    //                 // Upload Image
-    //                 Image::make($image_tmp)->save($imagePath);
-    //             }
-    //         }
-    //         $category = new Category;
-    //         $category->parent_id = $data['parent_id'];
-    //         $category->section_id = $data['section_id'];
-    //         $category->category_name = $data['category_name'];
-    //         $category->description = $data['description'];
-    //         $category->category_discount = $data['category_discount'];
-    //         $category->category_image = '';
-    //         $category->url = $data['url'];
-    //         $category->meta_title = $data['meta_title'];
-    //         $category->meta_description = $data['meta_description'];
-    //         $category->meta_keywords = $data['meta_keywords'];
-    //         $category->status = 1;
-    //         $category->save();
-
-
-    //         return redirect()->back()->with('success');
-    //     }
-
-    //     return view('admin.category.create', compact('category', 'title'));
-    // }
     public function store(Request $request)
     {
-        if($request->isMethod('post')){
-            $category = $request->all();
+        $category = new Category();
+        if($request->hasFile('category_image'))
+        {
+            $image_tmp = $request->file('category_image');
+            $extension = $image_tmp->getClientOriginalExtension();
+            $imageName = rand(111,99999).'.'.$extension;
+            $imagePath = 'storage/images/category'.$imageName;
+            Image::make($image_tmp)->save($imagePath);
+            $category->category_image = $imageName;
 
-            if($request->hasFile('category_image')){
-                $image_tmp = $request->file('category_image');
-                if($image_tmp->isValid()){
-                    // Get Image Extension
-                     $extension = $image_tmp->getClientOriginalExtension();
-                    // Generate New Image Name
-                     $imageName = rand(111,99999).'.'.$extension;
-                     $imagePath = 'storage/images/category'.$imageName;
-                    // Upload Image
-                     Image::make($image_tmp)->save($imagePath);
-                }
-            }
-            $category = new Category;
+        }
+
             $category->category_name = $request->category_name;
             $category->description = $request->description;
             $category->parent_id = $request->parent_id;
@@ -107,13 +57,29 @@ class CategoryController extends Controller
             $category->meta_title = $request->meta_title;
             $category->meta_description = $request->meta_description;
             $category->meta_keywords = $request->meta_keywords;
-            $category->category_image = $request->category_image;
+            $category->category_image = $imageName;
             $category->status = 1;
             $category->save();
 
 
+
+
+
             return redirect()->back()->with('success','Category added successfully');
-        }
+
+            // if($request->hasFile('category_image')){
+            //     $image_tmp = $request->file('category_image');
+            //     if($image_tmp->isValid()){
+            //         // Get Image Extension
+            //          $extension = $image_tmp->getClientOriginalExtension();
+            //         // Generate New Image Name
+            //          $imageName = rand(111,99999).'.'.$extension;
+            //          $imagePath = 'storage/images/category'.$imageName;
+            //         // Upload Image
+            //          Image::make($image_tmp)->save($imagePath);
+            //     }
+            // }
+
     }
 
     /**

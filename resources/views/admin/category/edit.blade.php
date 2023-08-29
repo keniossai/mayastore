@@ -36,14 +36,24 @@
                                         <?php $getSections = App\Models\Section::get()->toArray(); ?>
                                         <option value="">Select</option>
                                         @foreach ($getSections as $section)
-                                        <option value="{{ $section['id'] }}">{{ $section['name'] }}</option>
+                                        <option value="{{ $section['id'] }}" @if($category['section_id']==$section['id']) selected @endif>{{ $section['name'] }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Category Level<span class="text-danger">*</span></label>
                                     <select value="" name="parent_id" class="form-control" id="parent_id">
-                                        <option value="0">Main Category</option>
+                                        <option value="0" @if(isset($category['parent_id']) && $category['parent_id']==0) selected="" @endif>Main Category</option>
+                                        @if (!empty($getCategories))
+                                            @foreach ($getCategories as $category)
+                                                <option value="{{ $category['id'] }}" @if(isset($category['parent_id']) && $category['parent_id']==$category['id']) selected="" @endif>{{ $category['category_name'] }}</option>
+                                                @if (!empty($category['subcategories']))
+                                                    @foreach ($category['subcategories'] as $subcategory)
+                                                        <option value="{{ $subcategory['id'] }}" @if(isset($category['parent_id']) && $category['parent_id']==$subcategory['id']) selected="" @endif>{{ $subcategory['category_name'] }}</option>
+                                                    @endforeach
+                                                @endif
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">

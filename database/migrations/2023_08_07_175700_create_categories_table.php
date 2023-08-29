@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('parent_id');
+            $table->string('category_name',25);
             $table->integer('section_id');
-            $table->string('category_name');
-            $table->string('category_image');
+            $table->integer('parent_id');
+            $table->string('cat_banner',50);
             $table->float('category_discount');
             $table->text('description');
             $table->string('url');

@@ -72,6 +72,8 @@ class CategoryController extends Controller
         //
     }
 
+
+
     public function updateCategoryStatus(Request $request)
     {
         if($request->ajax()){
@@ -92,8 +94,10 @@ class CategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $category = Category::find($id);
-        return view('admin.category.edit', compact('category'));
+        $getCategories = Category::with('subcategories')->where(['parent_id'=>0, 'section_id'=>$category['section_id']])->get();
+        return view('admin.category.edit', compact('category', 'getCategories'));
     }
+
 
     /**
      * Update the specified resource in storage.

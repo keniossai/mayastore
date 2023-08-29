@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label">Category Description<span class="text-danger">*</span></label>
-                                    <textarea class="form-control" value="{{ $category['description'] }}" name="description" id="description" rows="3"></textarea>
+                                    <textarea class="form-control" value="{{ $category['description'] }}" name="description" id="description" rows="3">{{ $category['description'] }}</textarea>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category URL<span class="text-danger">*</span></label>

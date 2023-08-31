@@ -98,6 +98,15 @@ class CategoryController extends Controller
         return view('admin.category.edit', compact('category', 'getCategories'));
     }
 
+    public function appendCategoryLevel(Request $request)
+    {
+        if($request->ajax()){
+            $data = $request->all();
+            $getCategories = Category::with('subcategories')->where(['parent_id'=>0,'section_id'=>$data['section_id']])->get()->toArray();
+        return view('admin.category.cat-level', compact('getCategories'));
+        }
+    }
+
 
     /**
      * Update the specified resource in storage.

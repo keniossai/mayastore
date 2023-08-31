@@ -285,7 +285,7 @@
                     $("#section-"+section_id).html("<i class='fa fa-toggle-on' aria-hidden='true' status='Active'></i>")
                 }
             },error:function(){
-                alert('Error');
+                // alert('Error');
             }
         })
     });
@@ -353,6 +353,23 @@
             }
         })
     });
+
+    $("#section_id").change(function(){
+        var section_id = $(this).val();
+        $.ajax({
+            headers:{
+                'X-CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'get',
+            url: '/admin/append-category-level',
+            data:{section_id:section_id},
+            success:function(resp){
+                $("#appendCategoriesLevel").html(resp);
+            },error:function(){
+                alert("Error");
+            }
+        })
+    })
 });
 
 </script>

@@ -28,11 +28,11 @@
                             <div class="row form-material">
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Name<span class="text-danger">*</span></label>
-                                    <input type="text" value="{{ $category['category_name'] }}" name="name" id="" class="form-control" placeholder="Enter Category name">
+                                    <input type="text" value="{{ $category['category_name'] }}" name="category_name" id="" class="form-control">
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Section<span class="text-danger">*</span></label>
-                                    <select class="form-control" class="" value="" name="" id="">
+                                    <select class="form-control" class="" value="" name="section_id" id="section_id">
                                         <?php $getSections = App\Models\Section::get()->toArray(); ?>
                                         <option value="">Select</option>
                                         @foreach ($getSections as $section)
@@ -42,19 +42,9 @@
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Category Level<span class="text-danger">*</span></label>
-                                    <select value="" name="parent_id" class="form-control" id="parent_id">
-                                        <option value="0" @if(isset($category['parent_id']) && $category['parent_id']==0) selected="" @endif>Main Category</option>
-                                        @if (!empty($getCategories))
-                                            @foreach ($getCategories as $category)
-                                                <option value="{{ $category['id'] }}" @if(isset($category['parent_id']) && $category['parent_id']==$category['id']) selected="" @endif>{{ $category['category_name'] }}</option>
-                                                @if (!empty($category['subcategories']))
-                                                    @foreach ($category['subcategories'] as $subcategory)
-                                                        <option value="{{ $subcategory['id'] }}" @if(isset($category['parent_id']) && $category['parent_id']==$subcategory['id']) selected="" @endif>{{ $subcategory['category_name'] }}</option>
-                                                    @endforeach
-                                                @endif
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                    <div id="appendCategoryLevel">
+                                        @include('admin.category.cat-level')
+                                    </div>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Image<span class="text-danger">*</span></label>

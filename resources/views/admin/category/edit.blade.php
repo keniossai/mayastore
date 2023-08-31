@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Category Level<span class="text-danger">*</span></label>
-                                    <div id="appendCategoryLevel">
+                                    <div id="appendCategoriesLevel">
                                         @include('admin.category.cat-level')
                                     </div>
                                 </div>

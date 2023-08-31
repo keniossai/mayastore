@@ -1,5 +1,5 @@
 <select value="" name="parent_id" class="form-control" id="parent_id">
-    <option value="0" @if(isset($category['parent_id']) && $category['parent_id']==0) selected="" @endif>Main Category</option>
+    <option @if(isset($category['parent_id']) && $category['parent_id']==0) selected="" @endif>Main Category</option>
     @if (!empty($getCategories))
         @foreach ($getCategories as $category)
             <option value="{{ $category['id'] }}" @if(isset($category['parent_id']) && $category['parent_id']==$category['id']) selected="" @endif>{{ $category['category_name'] }}</option>

@@ -24,7 +24,9 @@
                         <h4 class="card-title">Edit Category</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{ url('admin/update-category/'.$category['id']) }}" method="post">
+                            @method('PUT')
+                            @csrf
                             <div class="row form-material">
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Name<span class="text-danger">*</span></label>

@@ -47,6 +47,10 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                    <label class="form-label">Category Discount<span class="text-danger">*</span></label>
+                                    <input type="text" value="{{ $category['category_discount'] }}" name="category_discount" id="" class="form-control">
+                                </div>
+                                <div class="col-md-12 mb-3">
                                     <label class="form-label">Category Image<span class="text-danger">*</span></label>
                                     <input type="file" value="{{ $category['category_image'] }}" name="category_image" id="" class="form-control">
                                 </div>

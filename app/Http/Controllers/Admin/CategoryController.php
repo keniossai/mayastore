@@ -115,7 +115,32 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cat = Category::find($id);
+            #Handle File Upload
+            if($request->hasfile('banner_img'))
+            {
+                $name = rand(111,99999). '.' . $request->banner_img->getClientOriginalExtension();
+                $path = public_path() .'/storage/category';
+                $request->banner_img->move($path, $name);
+                $banner_img = $name;
+            }else{
+            $banner_img = "";
+            }
+
+        $cat->category_name = $request->category_name;
+        $cat->section_id = $request->section_id;
+        $cat->parent_id = $request->parent_id;
+        $cat->cat_banner = $banner_img;
+        $cat->description = $request->description;
+        $cat->category_discount = $request->category_discount;
+        $cat->url = $request->url;
+        $cat->meta_title = $request->meta_title;
+        $cat->meta_description = $request->meta_description;
+        $cat->meta_keywords = $request->meta_keywords;
+        $cat->status = 1;
+        $cat->save();
+        return redirect()->back()->with('success','Category updated successfully');
+
     }
 
     /**
@@ -124,6 +149,6 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         Category::where('id', $id)->delete();
-        return back()->with('success','Section deleted successfully');
+        return back()->with('success','Category deleted successfully');
     }
 }

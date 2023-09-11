@@ -360,8 +360,8 @@
             headers:{
                 'X-CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            type: 'get',
-            url: '/admin/append-category-level',
+            type:'get',
+            url:'/admin/append-category-level',
             data:{section_id:section_id},
             success:function(resp){
                 $("#appendCategoriesLevel").html(resp);

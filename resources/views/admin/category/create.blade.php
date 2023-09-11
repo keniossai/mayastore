@@ -29,11 +29,11 @@
                             <div class="row form-material">
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category Name<span class="text-danger">*</span></label>
-                                    <input type="text" name="category_name" id="" class="form-control" placeholder="Enter Category name">
+                                    <input type="text" name="category_name" id="" class="form-control" placeholder="Enter Category name" required>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Select Section<span class="text-danger">*</span></label>
-                                    <select class="form-control" class="" name="section_id" id="section_id">
+                                    <select class="form-control" class="" name="section_id" id="section_id" required>
                                         <?php $getSections = App\Models\Section::get()->toArray(); ?>
                                         <option value="">Select</option>
                                         @foreach ($getSections as $section)
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Category URL<span class="text-danger">*</span></label>
-                                    <input type="text" name="url" id="url" class="form-control" placeholder="Enter URL">
+                                    <input type="text" name="url" id="url" class="form-control" placeholder="Enter URL" required>
                                 </div>
                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label class="form-label">Meta Title<span class="text-danger">*</span></label>

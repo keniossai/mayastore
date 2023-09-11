@@ -18,41 +18,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            {{-- <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header card-header-primary">
-                    <h4 class="card-title">Add Category</h4>
-                    <p class="card-category">Complete your Categories</p>
-                  </div>
-                  <div class="card-body">
-                    <form action="{{route('store.category')}}" method="POST" id="category" name="add_category" autocomplete="off" enctype="multipart/form-data">
-                      @csrf
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Category Name</label>
-                            <input type="text" class="form-control" name="cat_name">
-                            @if ($errors->has('cat_name'))
-                            <span class="errormsg text-danger">{{ $errors->first('cat_name') }} </span>
-                            @endif
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group bmd-form-group is-focused file-input">
-                            <label class="bmd-label-floating">Category Banner</label>
-                            <input type="file" name="banner_img" class="form-control" accept="image">
-                          </div>
-                          @if ($errors->has('banner_img'))
-                          <span class="errormsg text-danger">{{ $errors->first('banner_img') }} </span>
-                          @endif
-                        </div>
-                      </div>
-                      <button type="submit" class="btn btn-primary pull-left">Save</button>
-                      <div class="clearfix"></div>
-                    </form>
-                  </div>
-                </div>
-              </div> --}}
+            
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -86,7 +52,7 @@
                                     <label class="form-label">Category Discount<span class="text-danger">*</span></label>
                                     <input type="text" name="category_discount" id="category_discount" class="form-control">
                                 </div>
-                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label class="form-label">Category Image<span class="text-danger">*</span></label>
                                     <input type="file" name="banner_img" id="banner_img" class="form-control">
                                 </div>

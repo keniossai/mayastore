@@ -38,6 +38,7 @@ class CategoryController extends Controller
 
     public function store(Request $request){
 
+
          #Handle File Upload
          if($request->hasfile('banner_img'))
             {
@@ -46,8 +47,9 @@ class CategoryController extends Controller
                 $request->banner_img->move($path, $name);
                 $banner_img = $name;
             }else{
-            $banner_img = null;
+            $banner_img = "";
             }
+
         $cat = new Category();
         $cat->category_name = $request->category_name;
         $cat->section_id = $request->section_id;
@@ -93,6 +95,18 @@ class CategoryController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        $rules = [
+            'company_name' =>'required',
+            'shop_name' =>'required',
+            'address_one' =>'required',
+            'means_id' =>'required',
+            'means_id_proof' =>'required|image',
+            'phone_no' => 'required|numeric',
+            'license_id' => 'required',
+        ];
+
+        $this->validate($request,$rules);
+        
         $category = Category::find($id);
         $getCategories = Category::with('subcategories')->where(['parent_id'=>0, 'section_id'=>$category['section_id']])->get();
         return view('admin.category.edit', compact('category', 'getCategories'));

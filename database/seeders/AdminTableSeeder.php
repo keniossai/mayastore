@@ -14,13 +14,22 @@ class AdminTableSeeder extends Seeder
     public function run(): void
     {
         $adminRecords = [
-            ['id' => 2,
-            'name'=>'Maya Ossai',
-            'type'=>'vendor',
+            // ['id' => 2,
+            // 'name'=>'Maya Ossai',
+            // 'type'=>'vendor',
+            // 'mobile'=>'08162951236',
+            // 'email'=>'maya@gmail.com',
+            // 'password'=>'$2y$12$9vh/c6UDSxppbMqLPHKSzOOHezWRio2fAL2CtiB54SQT/evBTSSXO',
+            // 'vendor_id'=>1,
+            // 'photo'=>'',
+            // 'status'=>1 ],
+            ['id' => 1,
+            'name'=>'Ken Ossai',
+            'type'=>'admin',
             'mobile'=>'08162951236',
-            'email'=>'maya@gmail.com',
+            'email'=>'admin@gmail.com',
             'password'=>'$2y$12$9vh/c6UDSxppbMqLPHKSzOOHezWRio2fAL2CtiB54SQT/evBTSSXO',
-            'vendor_id'=>1,
+            'vendor_id'=>0,
             'photo'=>'',
             'status'=>1 ],
         ];

@@ -402,7 +402,7 @@
 						<span class="nav-text">Products</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="chat.html">Products</a></li>
+							<li><a href="{{ route('products') }}">Products</a></li>
 							<li><a href="chat.html">Bulk Import</a></li>
 						</ul>
 					</li>

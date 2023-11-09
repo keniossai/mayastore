@@ -7,10 +7,10 @@
         <div class="row">
             <div class="col-md-12 active-p">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h4 class="heading mb-0">Contacts</h4>
+                    <h2 class="heading mb-0">Products</h2>
                     <div>
-                        <a class="btn btn-primary btn-sm me-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">+ Add Contacts</a>
-                        <button type="button" class="btn btn-secondary btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Invite Customer
+                        <a class="btn btn-primary btn-sm me-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">+ Add Product</a>
+                        <button type="button" class="btn btn-secondary btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Bulk Import
                         </button>
                     </div>
                 </div>
@@ -19,7 +19,9 @@
                         <div class="table-responsive active-projects style-1 shorting dt-filter exports">
                             <div class="tbl-caption">
                             </div>
-                            <div id="contacts-tbl_wrapper" class="dataTables_wrapper no-footer"><div class="dt-buttons"><button class="dt-button buttons-excel buttons-html5 btn btn-sm border-0 processing" tabindex="0" aria-controls="contacts-tbl" type="button"><span> Export Report</span></button> </div><div id="contacts-tbl_filter" class="dataTables_filter"><label> <i class="fa-solid fa-magnifying-glass"></i><input type="search" class="" placeholder="Search..." aria-controls="contacts-tbl"></label></div><table id="contacts-tbl" class="table dataTable no-footer" role="grid" aria-describedby="contacts-tbl_info">
+                            <div id="contacts-tbl_wrapper" class="dataTables_wrapper no-footer">
+                                <div class="dt-buttons">
+                                    </div><div id="contacts-tbl_filter" class="dataTables_filter"><label> <i class="fa-solid fa-magnifying-glass"></i><input type="search" class="" placeholder="Search..." aria-controls="contacts-tbl"></label></div><table id="contacts-tbl" class="table dataTable no-footer" role="grid" aria-describedby="contacts-tbl_info">
                                 <thead class="p-5">
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="contacts-tbl">SL</th>
